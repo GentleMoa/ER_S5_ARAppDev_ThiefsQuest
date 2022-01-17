@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 18073f0327212f940a92a16754bc5aae
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - unlockUI: {fileID: 2942329891192622889, guid: d55dc8f45c7851f44aff6e7f8fdd0334, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

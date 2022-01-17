@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: b212c74d327ae9f449bb0963ed8cb64d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - wallMatOpaque: {fileID: 2100000, guid: 0cea0f19419a5534a96efa4719514c89, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
