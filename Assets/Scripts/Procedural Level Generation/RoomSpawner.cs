@@ -19,6 +19,8 @@ public class RoomSpawner : MonoBehaviour
 
     private GameObject deadEndObj;
 
+    public bool deadEndSpawned = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -97,16 +99,26 @@ public class RoomSpawner : MonoBehaviour
     private void SpawnDeadEnd()
     {
         Instantiate(deadEndObj, this.transform.position, this.transform.rotation * Quaternion.Euler(0.0f, 0.0f, 180.0f), transform);
+        //Setting the deadEndSpawned flag to true;
+        deadEndSpawned = true;
     }
 
     private void TerminateScript()
     {
         if (levelHandlerObj.GetComponent<RoomCounter>().levelGenerationFinished == true)
         {
-            //Deactivating the gameObject, this script is placed on (and therefore disabling all its colliders)
-            gameObject.GetComponent<Collider>().enabled = false;
-            Destroy(GetComponent<RoomSpawner>());
+            //Calling the coroutine to destroy the script with a delay
+            StartCoroutine(DelayedScriptTermination(3.0f));
         }
     }
 
+
+    IEnumerator DelayedScriptTermination(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        //Deactivating the gameObject, this script is placed on (and therefore disabling all its colliders)
+        gameObject.GetComponent<Collider>().enabled = false;
+        Destroy(GetComponent<RoomSpawner>());
+    }
 }
