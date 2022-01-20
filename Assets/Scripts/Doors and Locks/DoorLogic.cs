@@ -56,8 +56,8 @@ public class DoorLogic : MonoBehaviour
                 uiSpawned = false;
             }
         }
-
     }
+
 
     public void UnlockDoor()
     {

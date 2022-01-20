@@ -9,19 +9,23 @@ public class SpawnDoorway : MonoBehaviour
 
     private GameObject gameMechanicsHandler;
     private bool doorsSpawned = false;
+
+    private RoomSpawner roomSpawnerScript;
     
     // Start is called before the first frame update
     void Start()
     {
         //reference the Game Mechanics Handler go
         gameMechanicsHandler = GameObject.FindGameObjectWithTag("Level Handler");
+        //reference to the Room Spawner Script
+        roomSpawnerScript = GetComponent<RoomSpawner>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //If level generation has finished and no doorways have been spawned yet, ...
-        if (gameMechanicsHandler.GetComponent<RoomCounter>().levelGenerationFinished == true && doorsSpawned == false)
+        if (gameMechanicsHandler.GetComponent<RoomCounter>().levelGenerationFinished == true && doorsSpawned == false && roomSpawnerScript.deadEndSpawned == false)
         {
             // ..., Calls the function to spawn doorways
             SpawnDoorways();
