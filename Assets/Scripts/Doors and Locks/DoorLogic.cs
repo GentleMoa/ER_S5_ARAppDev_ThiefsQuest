@@ -14,6 +14,8 @@ public class DoorLogic : MonoBehaviour
     public Button unlockButton;
     private bool uiSpawned = false;
 
+    private GameObject unlockUIToBeDestroyed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,23 @@ public class DoorLogic : MonoBehaviour
         {
             SpawnUnlockUI();
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player" && uiSpawned == true)
+        {
+            //Finding the freshly spawned Unlock UI
+            unlockUIToBeDestroyed = GameObject.FindGameObjectWithTag("UnlockButton");
+            //Destroying it, when the player leaves the trigger without opening (and if there even is one)
+            if (unlockUIToBeDestroyed != null)
+            {
+                Destroy(unlockUIToBeDestroyed);
+                //resetting the flag to false
+                uiSpawned = false;
+            }
+        }
+
     }
 
     public void UnlockDoor()
