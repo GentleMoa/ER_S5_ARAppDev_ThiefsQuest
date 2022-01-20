@@ -16,20 +16,14 @@ public class ParentRoom : MonoBehaviour
         StartCoroutine(ActivateConnectors(1.0f));
 
         levelHandlerObj = GameObject.FindGameObjectWithTag("Level Handler");
+
+        InvokeRepeating("DestroyIfBelow", 3.0f, 3.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
         TerminateScript();
-
-        /*
-        if (transform.position.y < -49)
-        {
-            Destroy(gameObject);
-        }
-        */
-
     }
 
     // - - - Function Archive - - - //
@@ -57,6 +51,16 @@ public class ParentRoom : MonoBehaviour
         }
 
     }
+
+    private void DestroyIfBelow()
+    {
+        if (transform.position.y < -20)
+        {
+            Debug.Log(name + " has been set to y = -50 and will now be destroyed!");
+            //Destroying the room, if it has been set to y = -50
+            Destroy(gameObject);
+        }
+    } 
 
     private void TerminateScript()
     {
