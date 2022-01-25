@@ -13,14 +13,14 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_35753c71f66b4b10bf764888c4f49d0e:
-        m_Texture: {fileID: 2800000, guid: eae60a3cda89a2c4ba6fde8129462599, type: 3}
+        m_Texture: {fileID: 2800000, guid: 24ec2ba053fe800488755aace37f6f3c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_40264a56a84f42608e4f5149e5e0bb1c:
@@ -115,5 +115,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Position: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _position: {r: 0.008478999, g: 0.41260037, b: 1.4805954, a: 0}
+    - _position: {r: 0.44311827, g: 0.31219664, b: 1.2644615, a: 0}
   m_BuildTextureStacks: []

@@ -17,7 +17,7 @@ public class ParentRoom : MonoBehaviour
 
         levelHandlerObj = GameObject.FindGameObjectWithTag("Level Handler");
 
-        InvokeRepeating("DestroyIfBelow", 3.0f, 3.0f);
+        InvokeRepeating("DestroyIfBelow", 1.0f, 1.0f);
     }
 
     // Update is called once per frame

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PerformantColliderToggle : MonoBehaviour
 {
     private GameObject levelHandlerObj;
-    private GameObject wallColliders;
+    public GameObject wallColliders;
     private bool wallCollsDisabled = false;
     public int roomAge;
     public bool playerInRoom;
@@ -16,7 +16,7 @@ public class PerformantColliderToggle : MonoBehaviour
         //referencing the procedural level handler
         levelHandlerObj = GameObject.FindGameObjectWithTag("Level Handler");
         //referencing the wall collider child
-        wallColliders = transform.GetChild(transform.childCount - 1).gameObject;
+        wallColliders = transform.GetChild(transform.childCount - 1).gameObject; //This is a bad way of referencing an object, because if you change anything in the parents hierarchy, it wont work anymore.
         //get this gameobjects collider
         gameObject.GetComponent<Collider>().isTrigger = true;
         //define this rooms age
