@@ -108,12 +108,12 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _size: 0.6
+    - _size: 0
     m_Colors:
     - Color_8cf524c62ca64cee9cd5f2d96f5e7287: {r: 0.754717, g: 0.754717, b: 0.754717, a: 0}
     - Vector2_b3c73e416eda49ba8354297887ad9424: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Position: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _position: {r: 0.44311827, g: 0.31219664, b: 1.2644615, a: 0}
+    - _position: {r: 0.5150025, g: 0.4517123, b: 1.5862134, a: 0}
   m_BuildTextureStacks: []
