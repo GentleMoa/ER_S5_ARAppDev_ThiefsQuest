@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AR_PlayerSeethroughWalls : MonoBehaviour
 {
@@ -15,6 +16,14 @@ public class AR_PlayerSeethroughWalls : MonoBehaviour
     private Camera arCamera;
     public LayerMask mask;
 
+    //Adaptive seethrough Circle
+    private float distCameraToPlayer;
+    private float adaptiveCircleSize;
+    private float sizeDistanceFactor = 1.0f;
+
+    //UI-Debugging
+    private Text debuggerText_distCameraToPlayer;
+    
     void Start()
     {
         arCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -22,6 +31,9 @@ public class AR_PlayerSeethroughWalls : MonoBehaviour
         seethroughRoomMat_2.SetFloat(sizeID, 0.0f);
         seethroughRoomMat_3.SetFloat(sizeID, 0.0f);
         seethroughRoomMat_4.SetFloat(sizeID, 0.0f);
+
+        //UI-Debugging
+        //debuggerText_distCameraToPlayer = GameObject.FindGameObjectWithTag("UIDebugger_distCameraToPlayer").GetComponent<Text>();
     }
 
     void FixedUpdate()
@@ -54,10 +66,27 @@ public class AR_PlayerSeethroughWalls : MonoBehaviour
                 //hit.transform.parent.parent.gameObject.GetComponent<Renderer>().material = seethroughRoomMat;
                 //Debug.Log(hit.transform.parent.gameObject.name + hit.transform.parent.gameObject.tag);
 
-                seethroughRoomMat_1.SetFloat(sizeID, 0.6f);
-                seethroughRoomMat_2.SetFloat(sizeID, 0.6f);
-                seethroughRoomMat_3.SetFloat(sizeID, 0.6f);
-                seethroughRoomMat_4.SetFloat(sizeID, 0.6f);
+                //Adaptive size scaling of the seethrough circle
+                distCameraToPlayer = Vector3.Distance(arCamera.transform.position, transform.position);
+                
+                //DEBUGGING
+                //Debug.Log("Distance: " + distCameraToPlayer);
+
+                //UI-Debugging
+                /*
+                if (debuggerText_distCameraToPlayer != null)
+                {
+                    debuggerText_distCameraToPlayer.text = "Distance: " + distCameraToPlayer;
+                }
+                */
+
+                //Inverse proportional calculation
+                adaptiveCircleSize = sizeDistanceFactor / distCameraToPlayer;
+
+                seethroughRoomMat_1.SetFloat(sizeID, /* 0.6f */ adaptiveCircleSize);
+                seethroughRoomMat_2.SetFloat(sizeID, /* 0.6f */ adaptiveCircleSize);
+                seethroughRoomMat_3.SetFloat(sizeID, /* 0.6f */ adaptiveCircleSize);
+                seethroughRoomMat_4.SetFloat(sizeID, /* 0.6f */ adaptiveCircleSize);
             }
             
             if (hit.collider.transform.gameObject.tag == "NonWall")
