@@ -16,6 +16,7 @@ TagManager:
   - NonWall
   - UnlockButton
   - UIDebugger_distCameraToPlayer
+  - Scene Manager
   layers:
   - Default
   - TransparentFX
