@@ -17,6 +17,8 @@ TagManager:
   - UnlockButton
   - UIDebugger_distCameraToPlayer
   - Scene Manager
+  - Lightning
+  - LootingButton
   layers:
   - Default
   - TransparentFX

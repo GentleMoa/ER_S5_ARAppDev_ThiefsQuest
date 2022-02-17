@@ -953,6 +953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7696934285320171951}
   - component: {fileID: 1647050006866104276}
+  - component: {fileID: 444794574248266720}
   m_Layer: 0
   m_Name: cabinet_4.007
   m_TagString: Untagged
@@ -1029,6 +1030,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.0071503744, z: 0.0031084667}
     m_Extent: {x: 0.008379875, y: 0.009511868, z: 0.007517821}
   m_DirtyAABB: 0
+--- !u!65 &444794574248266720
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3428823528392390713}
+  m_Material: {fileID: 13400000, guid: 3e9577c1c68a75b468d5f0a8c9187f6a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016759763, y: 0.008811205, z: 0.019023744}
+  m_Center: {x: -0.000000011261216, y: 0.000003755627, z: -0.00084962224}
 --- !u!1 &3432427859163493239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,6 +1378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2239243337657852715}
   - component: {fileID: 7251467110621672101}
+  - component: {fileID: 1682582574026326256}
   m_Layer: 0
   m_Name: cabinet_6.001
   m_TagString: Untagged
@@ -1450,6 +1465,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00001799874, y: 0.005394174, z: 0.0004304261}
     m_Extent: {x: 0.00875749, y: 0.0066044573, z: 0.004654387}
   m_DirtyAABB: 0
+--- !u!65 &1682582574026326256
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4270704480921915228}
+  m_Material: {fileID: 13400000, guid: 3e9577c1c68a75b468d5f0a8c9187f6a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01751499, y: 0.008311873, z: 0.013208921}
+  m_Center: {x: -0.0000000071665323, y: 0.000015698575, z: -0.00095154153}
 --- !u!1 &4286148348925166592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1461,6 +1489,7 @@ GameObject:
   - component: {fileID: 2987441738155979525}
   - component: {fileID: 3560333647828628986}
   - component: {fileID: 4394911656619632061}
+  - component: {fileID: 299009162341017577}
   m_Layer: 0
   m_Name: chair_4.001
   m_TagString: Untagged
@@ -1531,6 +1560,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &299009162341017577
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4286148348925166592}
+  m_Material: {fileID: 13400000, guid: 3e9577c1c68a75b468d5f0a8c9187f6a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0048960038, y: 0.005094891, z: 0.013300909}
+  m_Center: {x: -0.000000020305148, y: 0.00020501653, z: 0.006653896}
 --- !u!1 &4336531281007330692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,6 +1642,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 210361416591274829}
+  - component: {fileID: 7643411494889980212}
+  - component: {fileID: 2352824359517423688}
   m_Layer: 0
   m_Name: Armature_cabinet_4.007
   m_TagString: Untagged
@@ -1622,6 +1666,34 @@ Transform:
   m_Father: {fileID: 7730931222306959772}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7643411494889980212
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4511120388135972749}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016398886, y: 0.0028762755, z: 0.018446347}
+  m_Center: {x: 0.0001804249, y: -0.0059044445, z: 0.007288698}
+--- !u!114 &2352824359517423688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4511120388135972749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b32b10e23c4ff4ca6f6064bb53f8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootingUI: {fileID: 2942329891192622889, guid: 92ba5fb312dcaca4e9aae043cdacfcd9, type: 3}
+  lootingButton: {fileID: 0}
+  containerAnimator: {fileID: 7952309369256790008}
 --- !u!1 &4511606195943651142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1917,6 +1989,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3805385716404444549}
+  - component: {fileID: 32750074516843262}
+  - component: {fileID: 712335548766711692}
   m_Layer: 0
   m_Name: Armature_cabinet_6.001
   m_TagString: Untagged
@@ -1939,6 +2013,34 @@ Transform:
   m_Father: {fileID: 6917796339833707280}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &32750074516843262
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671749322536130144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01751499, y: 0.003161913, z: 0.013138367}
+  m_Center: {x: -0.000000008072478, y: -0.005663365, z: 0.005458562}
+--- !u!114 &712335548766711692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671749322536130144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b32b10e23c4ff4ca6f6064bb53f8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootingUI: {fileID: 2942329891192622889, guid: 92ba5fb312dcaca4e9aae043cdacfcd9, type: 3}
+  lootingButton: {fileID: 0}
+  containerAnimator: {fileID: 5588742709987980012}
 --- !u!1 &5834401487621357564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2223,6 +2325,7 @@ GameObject:
   - component: {fileID: 2760647802793506400}
   - component: {fileID: 2775593774264475164}
   - component: {fileID: 4667541279328453610}
+  - component: {fileID: 1905964294192432025}
   m_Layer: 0
   m_Name: bench_1.001
   m_TagString: Untagged
@@ -2293,6 +2396,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1905964294192432025
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6706619528506831011}
+  m_Material: {fileID: 13400000, guid: 3e9577c1c68a75b468d5f0a8c9187f6a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021644201, y: 0.0059559764, z: 0.005342813}
+  m_Center: {x: -0.000010791234, y: -0.000003599097, z: 0.0027029612}
 --- !u!1 &6750439906211324410
 GameObject:
   m_ObjectHideFlags: 0

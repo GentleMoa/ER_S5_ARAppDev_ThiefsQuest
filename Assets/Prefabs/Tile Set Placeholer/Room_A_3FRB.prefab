@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 2463022305645679129}
   - component: {fileID: 6285152172002595910}
   - component: {fileID: 4988275247371308823}
+  - component: {fileID: 164945101386791740}
   m_Layer: 0
   m_Name: chest_3.001
   m_TagString: Untagged
@@ -255,6 +256,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &164945101386791740
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097993570868940015}
+  m_Material: {fileID: 13400000, guid: 3e9577c1c68a75b468d5f0a8c9187f6a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.010503379, y: 0.004126442, z: 0.0050556688}
+  m_Center: {x: 0.000000018704739, y: -0.000000007579574, z: 0.0025373974}
 --- !u!1 &1207874876956639694
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,6 +626,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5810233598923649812}
+  - component: {fileID: 280044445042298051}
+  - component: {fileID: 4990417189270180600}
   m_Layer: 0
   m_Name: Armature_chest_6.001
   m_TagString: Untagged
@@ -634,6 +650,34 @@ Transform:
   m_Father: {fileID: 6129642943563174766}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &280044445042298051
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2768197582723923010}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.012959783, y: 0.00274855, z: 0.009875902}
+  m_Center: {x: 0, y: -0.004200228, z: 0.0041772444}
+--- !u!114 &4990417189270180600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2768197582723923010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b32b10e23c4ff4ca6f6064bb53f8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootingUI: {fileID: 2942329891192622889, guid: 92ba5fb312dcaca4e9aae043cdacfcd9, type: 3}
+  lootingButton: {fileID: 0}
+  containerAnimator: {fileID: 8196059338180003690}
 --- !u!1 &2963863271974263305
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,6 +826,7 @@ GameObject:
   - component: {fileID: 5413611824078374099}
   - component: {fileID: 1793439515542704391}
   - component: {fileID: 43618946769165311}
+  - component: {fileID: 2364983718658970452}
   m_Layer: 0
   m_Name: table_2.001
   m_TagString: Untagged
@@ -852,6 +897,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2364983718658970452
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3617027134455490711}
+  m_Material: {fileID: 13400000, guid: 3e9577c1c68a75b468d5f0a8c9187f6a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.012525293, y: 0.008638097, z: 0.0077556917}
+  m_Center: {x: 0.0000000018626451, y: 0.000000018626451, z: 0.0039010237}
 --- !u!1 &3746577866937985390
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,6 +920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1468700214171928424}
   - component: {fileID: 2755946963840178626}
+  - component: {fileID: 4331054858679340354}
   m_Layer: 0
   m_Name: chest_6.001
   m_TagString: Untagged
@@ -937,6 +996,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0000068321824, y: 0.005355239, z: 0.000011868775}
     m_Extent: {x: 0.006479891, y: 0.0065266434, z: 0.0026582798}
   m_DirtyAABB: 0
+--- !u!65 &4331054858679340354
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3746577866937985390}
+  m_Material: {fileID: 13400000, guid: 3e9577c1c68a75b468d5f0a8c9187f6a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.012959782, y: 0.0053165616, z: 0.01305329}
+  m_Center: {x: 4.5474735e-13, y: 0.000000023744178, z: 0.005591835}
 --- !u!1 &4100182250682010150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,6 +1494,7 @@ GameObject:
   - component: {fileID: 1166192607026661649}
   - component: {fileID: 8925302269843629148}
   - component: {fileID: 1690601911101110407}
+  - component: {fileID: 1858459429115226279}
   m_Layer: 0
   m_Name: table_8.001
   m_TagString: Untagged
@@ -1492,6 +1565,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1858459429115226279
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5505763331621871781}
+  m_Material: {fileID: 13400000, guid: 3e9577c1c68a75b468d5f0a8c9187f6a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01993736, y: 0.011373088, z: 0.006628199}
+  m_Center: {x: -0.00000403868, y: 0.0000000037252903, z: 0.0033297616}
 --- !u!1 &5639975434382679288
 GameObject:
   m_ObjectHideFlags: 0
@@ -2100,6 +2186,7 @@ GameObject:
   - component: {fileID: 6076592473609068448}
   - component: {fileID: 7671354851461855282}
   - component: {fileID: 3982727477333937573}
+  - component: {fileID: 6241628282931631629}
   m_Layer: 0
   m_Name: bench_6.001
   m_TagString: Untagged
@@ -2170,6 +2257,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6241628282931631629
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7587828940721926058}
+  m_Material: {fileID: 13400000, guid: 3e9577c1c68a75b468d5f0a8c9187f6a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014722794, y: 0.0052166088, z: 0.014210452}
+  m_Center: {x: -0.000021398531, y: -0.001794392, z: 0.0071109664}
 --- !u!1 &7851724259525315087
 GameObject:
   m_ObjectHideFlags: 0
