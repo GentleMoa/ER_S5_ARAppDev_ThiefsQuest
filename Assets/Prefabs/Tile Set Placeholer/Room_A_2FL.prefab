@@ -157,6 +157,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6595034327213418412}
+  - component: {fileID: 8521892172167250679}
+  - component: {fileID: 8685782255866833700}
   m_Layer: 0
   m_Name: Armature_jewelryBox.001
   m_TagString: Untagged
@@ -179,6 +181,34 @@ Transform:
   m_Father: {fileID: 7895102252606477554}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8521892172167250679
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217878400821625744}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.007955445, y: 0.0076688887, z: 0.0018874196}
+  m_Center: {x: -0.000038606304, y: -0.002556633, z: 0.00023860572}
+--- !u!114 &8685782255866833700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217878400821625744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b32b10e23c4ff4ca6f6064bb53f8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootingUI: {fileID: 2942329891192622889, guid: 92ba5fb312dcaca4e9aae043cdacfcd9, type: 3}
+  lootingButton: {fileID: 0}
+  containerAnimator: {fileID: 4503387895707296263}
 --- !u!1 &542294995712600733
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +313,7 @@ GameObject:
   - component: {fileID: 8984304938871985311}
   - component: {fileID: 3451058565500044993}
   - component: {fileID: 3829833018406636752}
+  - component: {fileID: 446009566665695191}
   m_Layer: 0
   m_Name: chair_6.001
   m_TagString: Untagged
@@ -353,6 +384,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &446009566665695191
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723811941698184208}
+  m_Material: {fileID: 13400000, guid: 3e9577c1c68a75b468d5f0a8c9187f6a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.008432929, y: 0.0030157312, z: 0.0067736334}
+  m_Center: {x: 0.000024082397, y: -0.00008926174, z: 0.0033614559}
 --- !u!1 &934517784212424185
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +408,7 @@ GameObject:
   - component: {fileID: 2727123044003390232}
   - component: {fileID: 2368674539049907950}
   - component: {fileID: 4882844270168069497}
+  - component: {fileID: 891639278807067912}
   m_Layer: 0
   m_Name: stool_6.001
   m_TagString: Untagged
@@ -434,6 +479,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &891639278807067912
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934517784212424185}
+  m_Material: {fileID: 13400000, guid: 3e9577c1c68a75b468d5f0a8c9187f6a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0044000014, y: 0.0044000032, z: 0.004278454}
+  m_Center: {x: 0.000000591763, y: -0.00000049012215, z: 0.0021478066}
 --- !u!1 &1411721634533051971
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,6 +818,7 @@ GameObject:
   - component: {fileID: 7515533937393342891}
   - component: {fileID: 1018753148433482567}
   - component: {fileID: 3610203955920631635}
+  - component: {fileID: 657352589786100804}
   m_Layer: 0
   m_Name: bed_5.001
   m_TagString: Untagged
@@ -830,6 +889,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &657352589786100804
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2911235572312830355}
+  m_Material: {fileID: 13400000, guid: 3e9577c1c68a75b468d5f0a8c9187f6a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.016478319, y: 0.025068462, z: 0.027384449}
+  m_Center: {x: -0.0000074603613, y: 0.0008614221, z: 0.013705497}
 --- !u!1 &3005302301847692170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,6 +1147,7 @@ GameObject:
   - component: {fileID: 4246940684772991061}
   - component: {fileID: 7508345439258565441}
   - component: {fileID: 5225551592765996731}
+  - component: {fileID: 4119391595026052548}
   m_Layer: 0
   m_Name: table_3.001
   m_TagString: Untagged
@@ -1145,6 +1218,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4119391595026052548
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4405754761203851384}
+  m_Material: {fileID: 13400000, guid: 3e9577c1c68a75b468d5f0a8c9187f6a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.019533405, y: 0.009766699, z: 0.010163318}
+  m_Center: {x: 0.0000000027939677, y: -1.8149753e-16, z: 0.0051087043}
 --- !u!1 &4512315163618245471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,6 +1296,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6024868388936419515}
+  - component: {fileID: 293781650826682433}
+  - component: {fileID: 1515604063625473563}
   m_Layer: 0
   m_Name: Armature_cupboard_4.001
   m_TagString: Untagged
@@ -1232,6 +1320,34 @@ Transform:
   m_Father: {fileID: 3879048536165360101}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &293781650826682433
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5300928167438169167}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.018802246, y: 0.0028314004, z: 0.0125201205}
+  m_Center: {x: 0, y: -0.005629367, z: 0.005}
+--- !u!114 &1515604063625473563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5300928167438169167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b32b10e23c4ff4ca6f6064bb53f8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootingUI: {fileID: 2942329891192622889, guid: 92ba5fb312dcaca4e9aae043cdacfcd9, type: 3}
+  lootingButton: {fileID: 0}
+  containerAnimator: {fileID: 4006040687564004997}
 --- !u!1 &5386527506865169118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,6 +1949,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4018289417170953501}
   - component: {fileID: 6754034946646355321}
+  - component: {fileID: 716117311453920648}
   m_Layer: 0
   m_Name: cupboard_4.001
   m_TagString: Untagged
@@ -1909,6 +2026,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0000030398369, y: 0.00411182, z: 0.0013190254}
     m_Extent: {x: 0.009401124, y: 0.006260059, z: 0.005464811}
   m_DirtyAABB: 0
+--- !u!65 &716117311453920648
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7977746829115344886}
+  m_Material: {fileID: 13400000, guid: 3e9577c1c68a75b468d5f0a8c9187f6a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.018802246, y: 0.008330195, z: 0.0125201205}
+  m_Center: {x: 0, y: 0.000019406638, z: -0.0011055247}
 --- !u!1 &8116066061309752697
 GameObject:
   m_ObjectHideFlags: 0

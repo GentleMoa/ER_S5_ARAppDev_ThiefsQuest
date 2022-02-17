@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 7499364996642943472}
   - component: {fileID: 5222524057768375032}
   - component: {fileID: 3272481621919584225}
+  - component: {fileID: 8295625444391914716}
   m_Layer: 0
   m_Name: bed_4.001
   m_TagString: Untagged
@@ -218,6 +219,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8295625444391914716
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648536319184067212}
+  m_Material: {fileID: 13400000, guid: 3e9577c1c68a75b468d5f0a8c9187f6a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.01852278, y: 0.023799779, z: 0.02254372}
+  m_Center: {x: -0.000000007450581, y: 0.0005430341, z: 0.011265901}
 --- !u!1 &1744655359725818378
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,6 +398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3187351898431577593}
   - component: {fileID: 7410002267831146359}
+  - component: {fileID: 7120729671590855554}
   m_Layer: 0
   m_Name: chestBench.001
   m_TagString: Untagged
@@ -459,6 +474,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00000044796616, y: 0.006237804, z: 0.00017930113}
     m_Extent: {x: 0.006128766, y: 0.0079961475, z: 0.0037683644}
   m_DirtyAABB: 0
+--- !u!65 &7120729671590855554
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905842195700584283}
+  m_Material: {fileID: 13400000, guid: 3e9577c1c68a75b468d5f0a8c9187f6a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.012257539, y: 0.0075367335, z: 0.0159923}
+  m_Center: {x: -6.8331474e-10, y: -0.00016830592, z: 0.0036770501}
 --- !u!1 &2882789135972260491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,6 +1373,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2834719577888709766}
+  - component: {fileID: 7544179085177683363}
+  - component: {fileID: 7559714368480226938}
   m_Layer: 0
   m_Name: Armature_chestBench.001
   m_TagString: Untagged
@@ -1367,6 +1397,34 @@ Transform:
   m_Father: {fileID: 7315774919684011473}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7544179085177683363
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7245072280839484413}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.012257538, y: 0.0025960023, z: 0.010205827}
+  m_Center: {x: -0.0000000014194024, y: -0.005086835, z: 0.0034099887}
+--- !u!114 &7559714368480226938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7245072280839484413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b32b10e23c4ff4ca6f6064bb53f8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootingUI: {fileID: 2942329891192622889, guid: 92ba5fb312dcaca4e9aae043cdacfcd9, type: 3}
+  lootingButton: {fileID: 0}
+  containerAnimator: {fileID: 4239216128673886948}
 --- !u!1 &7273928991794896816
 GameObject:
   m_ObjectHideFlags: 0
@@ -1545,6 +1603,7 @@ GameObject:
   - component: {fileID: 6343567365429773964}
   - component: {fileID: 2363585541478814126}
   - component: {fileID: 248334339210358004}
+  - component: {fileID: 2843301929853502379}
   m_Layer: 0
   m_Name: bench_3.001
   m_TagString: Untagged
@@ -1615,6 +1674,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2843301929853502379
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7855743918554734248}
+  m_Material: {fileID: 13400000, guid: 3e9577c1c68a75b468d5f0a8c9187f6a, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.021644209, y: 0.005955974, z: 0.0051328135}
+  m_Center: {x: 0.000011454339, y: 0.000023834988, z: 0.0025790196}
 --- !u!1 &7984048898405199723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,7 +1703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7315774919684011473
 Transform:
   m_ObjectHideFlags: 0
