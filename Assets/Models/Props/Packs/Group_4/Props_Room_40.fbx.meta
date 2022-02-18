@@ -4,6 +4,18 @@ ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
+      74: -6156391456983298619
+    second: Cabinet_3_LowerDoor_Open
+  - first:
+      74: -1807251680451818081
+    second: Cabinet_3_LowerDoor_Close
+  - first:
+      74: -4589019793213055691
+    second: Cabinet_3_UpperDoor_Open
+  - first:
+      74: -3536864548628705541
+    second: Cabinet_3_UpperDoor_Close
+  - first:
       74: 5916927153172527025
     second: Cupboard_4_Door.L_Open
   - first:
