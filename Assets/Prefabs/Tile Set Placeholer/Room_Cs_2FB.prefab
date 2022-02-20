@@ -1622,6 +1622,7 @@ GameObject:
   m_Component:
   - component: {fileID: 810445068186211107}
   - component: {fileID: 1467245758376564125}
+  - component: {fileID: 9221189160159251643}
   m_Layer: 0
   m_Name: cabinet_3.004
   m_TagString: Untagged
@@ -1699,6 +1700,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.009623512, z: -0.000000059604645}
     m_Extent: {x: 0.0077476767, y: 0.010522776, z: 0.0043564783}
   m_DirtyAABB: 0
+--- !u!65 &9221189160159251643
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4882365674734143707}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.015495362, y: 0.008712966, z: 0.021045558}
+  m_Center: {x: -0.00000009897635, y: -0.000000022491715, z: 0.009623514}
 --- !u!1 &4904456055958434968
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,9 +20,9 @@ public class LootingLogic : MonoBehaviour
 
     private bool containerOpened = false;
 
-    public GameObject canvasLootMessageBackground;
-    public Image lootBackgroundImage;
-    public TMP_Text lootMessageText;
+    private GameObject canvasLootMessageBackground;
+    private Image lootBackgroundImage;
+    private TMP_Text lootMessageText;
 
     // Start is called before the first frame update
     void Start()
