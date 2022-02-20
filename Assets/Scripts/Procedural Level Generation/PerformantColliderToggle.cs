@@ -10,6 +10,8 @@ public class PerformantColliderToggle : MonoBehaviour
     public int roomAge;
     public bool playerInRoom;
 
+    public PropsPerformantColliderToggle[] propsColliderToggleScripts;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,11 @@ public class PerformantColliderToggle : MonoBehaviour
             wallColliders.SetActive(true);
             //Debug.Log(name + "Wall Colliders ENABLED");
 
+            for (int i = 0; i < propsColliderToggleScripts.Length; i++)
+            {
+                propsColliderToggleScripts[i].EnablePropsColliders();
+            }
+
             //Setting the flag to true
             playerInRoom = true;
         }
@@ -52,6 +59,11 @@ public class PerformantColliderToggle : MonoBehaviour
         {
             wallColliders.SetActive(false);
             //Debug.Log(name + "Wall Colliders DISABLED");
+
+            for (int i = 0; i < propsColliderToggleScripts.Length; i++)
+            {
+                propsColliderToggleScripts[i].DisablePropsColliders();
+            }
 
             //Setting the flag to false
             playerInRoom = false;

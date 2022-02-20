@@ -40,6 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 678563821693450007}
   - component: {fileID: 568696040894329839}
+  - component: {fileID: 6079383633953890771}
   m_Layer: 0
   m_Name: Room_Bc_3FRL_Props_1
   m_TagString: Untagged
@@ -87,6 +88,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6079383633953890771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153525494837964205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0343c805698f647a474a5cbb290971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propColliders: []
 --- !u!1 &343788092438604278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,6 +1162,9 @@ MonoBehaviour:
   wallColliders: {fileID: 0}
   roomAge: 0
   playerInRoom: 0
+  propsColliderToggleScripts:
+  - {fileID: 6079383633953890771}
+  - {fileID: 7535922402729694818}
 --- !u!114 &2204122609256961403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2313,6 +2330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5771949010082428306}
   - component: {fileID: 1662218413269883854}
+  - component: {fileID: 7535922402729694818}
   m_Layer: 0
   m_Name: Room_Bc_3FRL_Props_2
   m_TagString: Untagged
@@ -2355,6 +2373,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7535922402729694818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7434449184633504002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0343c805698f647a474a5cbb290971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propColliders: []
 --- !u!1 &7543397968905496448
 GameObject:
   m_ObjectHideFlags: 0
