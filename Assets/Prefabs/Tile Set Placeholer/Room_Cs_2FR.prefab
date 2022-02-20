@@ -693,6 +693,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8369993130190048842}
   - component: {fileID: 6615540710879566158}
+  - component: {fileID: 4056164303685693030}
   m_Layer: 0
   m_Name: Room_Cs_2FR_Props_1
   m_TagString: Untagged
@@ -740,6 +741,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4056164303685693030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250026016524594057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0343c805698f647a474a5cbb290971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propColliders: []
 --- !u!1 &1253209813277267497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1604,6 +1618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2361789307857573414}
   - component: {fileID: 3198409189128699378}
+  - component: {fileID: 7865170164137379071}
   m_Layer: 0
   m_Name: Room_Cs_2FR_Props_2
   m_TagString: Untagged
@@ -1646,6 +1661,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7865170164137379071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4317043251008917827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0343c805698f647a474a5cbb290971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propColliders: []
 --- !u!1 &4542268194067452304
 GameObject:
   m_ObjectHideFlags: 0
@@ -2325,6 +2353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5091948426208237230}
   - component: {fileID: 1221537498089476751}
+  - component: {fileID: 4926513225311675356}
   m_Layer: 0
   m_Name: Room_Cs_2FR_Props_3
   m_TagString: Untagged
@@ -2367,6 +2396,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4926513225311675356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5612026856110820372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0343c805698f647a474a5cbb290971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propColliders: []
 --- !u!1 &6271290094464808307
 GameObject:
   m_ObjectHideFlags: 0
@@ -2917,6 +2959,10 @@ MonoBehaviour:
   wallColliders: {fileID: 0}
   roomAge: 0
   playerInRoom: 0
+  propsColliderToggleScripts:
+  - {fileID: 4056164303685693030}
+  - {fileID: 7865170164137379071}
+  - {fileID: 4926513225311675356}
 --- !u!114 &-1368536368424454890
 MonoBehaviour:
   m_ObjectHideFlags: 0

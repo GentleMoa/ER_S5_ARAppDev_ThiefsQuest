@@ -919,6 +919,8 @@ MonoBehaviour:
   wallColliders: {fileID: 0}
   roomAge: 0
   playerInRoom: 0
+  propsColliderToggleScripts:
+  - {fileID: 1248489921755051592}
 --- !u!114 &246503127225284075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1697,6 +1699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7315774919684011473}
   - component: {fileID: 4239216128673886948}
+  - component: {fileID: 1248489921755051592}
   m_Layer: 0
   m_Name: Room_A_2FB_Prop_Assembly
   m_TagString: Untagged
@@ -1741,6 +1744,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1248489921755051592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7984048898405199723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0343c805698f647a474a5cbb290971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propColliders: []
 --- !u!1 &8518332009092866903
 GameObject:
   m_ObjectHideFlags: 0

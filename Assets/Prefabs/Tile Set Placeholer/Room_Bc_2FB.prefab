@@ -1423,6 +1423,9 @@ MonoBehaviour:
   wallColliders: {fileID: 0}
   roomAge: 0
   playerInRoom: 0
+  propsColliderToggleScripts:
+  - {fileID: 920430881103212832}
+  - {fileID: 7898980241547766750}
 --- !u!114 &2709950846575401937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1659,6 +1662,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6690810228962131784}
   - component: {fileID: 6789107216137072265}
+  - component: {fileID: 920430881103212832}
   m_Layer: 0
   m_Name: Room_Bc_1F_Props_1
   m_TagString: Untagged
@@ -1705,6 +1709,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &920430881103212832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6309922240719103474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0343c805698f647a474a5cbb290971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propColliders: []
 --- !u!1 &6366446230124634873
 GameObject:
   m_ObjectHideFlags: 0
@@ -2508,6 +2525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2625048919194992869}
   - component: {fileID: 3735294370672695620}
+  - component: {fileID: 7898980241547766750}
   m_Layer: 0
   m_Name: Room_Bc_1F_Props_2
   m_TagString: Untagged
@@ -2550,6 +2568,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7898980241547766750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8787034598285484861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0343c805698f647a474a5cbb290971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propColliders: []
 --- !u!1 &8936264946716862943
 GameObject:
   m_ObjectHideFlags: 0

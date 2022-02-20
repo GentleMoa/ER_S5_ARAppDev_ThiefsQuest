@@ -101,6 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7025501148033298886}
   - component: {fileID: 2256063361046344852}
+  - component: {fileID: 5165972746694451804}
   m_Layer: 0
   m_Name: Room_A_3FRL_Prop_Assembly_2
   m_TagString: Untagged
@@ -143,6 +144,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5165972746694451804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321960160134155082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0343c805698f647a474a5cbb290971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propColliders: []
 --- !u!1 &1447724444784374102
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,6 +473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2919310613954514756}
   - component: {fileID: 9009974720872913680}
+  - component: {fileID: 424538756831911724}
   m_Layer: 0
   m_Name: Room_A_3FRL_Prop_Assembly_1
   m_TagString: Untagged
@@ -503,6 +518,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &424538756831911724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2578496766797747710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0343c805698f647a474a5cbb290971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propColliders: []
 --- !u!1 &2675953172219684855
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,6 +2122,9 @@ MonoBehaviour:
   wallColliders: {fileID: 0}
   roomAge: 0
   playerInRoom: 0
+  propsColliderToggleScripts:
+  - {fileID: 424538756831911724}
+  - {fileID: 5165972746694451804}
 --- !u!114 &-6963714926413103604
 MonoBehaviour:
   m_ObjectHideFlags: 0

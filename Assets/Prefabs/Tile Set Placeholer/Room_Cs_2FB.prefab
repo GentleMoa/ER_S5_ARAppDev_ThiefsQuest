@@ -1076,6 +1076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4597729556205115864}
   - component: {fileID: 7422593311195217750}
+  - component: {fileID: 3537320340825580528}
   m_Layer: 0
   m_Name: Room_Cs_2FB_Props_1
   m_TagString: Untagged
@@ -1124,6 +1125,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3537320340825580528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3784635602987369314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0343c805698f647a474a5cbb290971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propColliders: []
 --- !u!1 &3825347405187754844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1879,6 +1893,10 @@ MonoBehaviour:
   wallColliders: {fileID: 0}
   roomAge: 0
   playerInRoom: 0
+  propsColliderToggleScripts:
+  - {fileID: 3537320340825580528}
+  - {fileID: 221954915428120486}
+  - {fileID: 2358381020117794770}
 --- !u!114 &870301022277325350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1902,6 +1920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6556848346665968941}
   - component: {fileID: 3387091576016773024}
+  - component: {fileID: 2358381020117794770}
   m_Layer: 0
   m_Name: Room_Cs_2FB_Props_3
   m_TagString: Untagged
@@ -1944,6 +1963,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2358381020117794770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5276360877004865719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0343c805698f647a474a5cbb290971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propColliders: []
 --- !u!1 &5857081176205700722
 GameObject:
   m_ObjectHideFlags: 0
@@ -2714,6 +2746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7194159037682381037}
   - component: {fileID: 5227385128404001513}
+  - component: {fileID: 221954915428120486}
   m_Layer: 0
   m_Name: Room_Cs_2FB_Props_2
   m_TagString: Untagged
@@ -2756,6 +2789,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &221954915428120486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7538209027252628055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e0343c805698f647a474a5cbb290971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propColliders: []
 --- !u!1 &7938294704699203858
 GameObject:
   m_ObjectHideFlags: 0
