@@ -19,6 +19,7 @@ TagManager:
   - Scene Manager
   - Lightning
   - LootingButton
+  - CanvasLootMessage
   layers:
   - Default
   - TransparentFX

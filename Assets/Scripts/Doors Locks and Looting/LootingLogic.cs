@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LootingLogic : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class LootingLogic : MonoBehaviour
 
     private bool containerOpened = false;
 
+    public GameObject canvasLootMessageBackground;
+    public Image lootBackgroundImage;
+    public TMP_Text lootMessageText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +35,9 @@ public class LootingLogic : MonoBehaviour
             //... do so now
             containerCol.isTrigger = true;
         }
+
+        //referencing the canvasLootMessageBackground by tag
+        canvasLootMessageBackground = GameObject.FindGameObjectWithTag("CanvasLootMessage");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -94,8 +102,7 @@ public class LootingLogic : MonoBehaviour
         //play container opening anim here
         containerAnimator.SetTrigger("containerOpening");
 
-        //then loot the container
-        Debug.Log("You looted " + Random.Range(30, 150) + " coins!");
+        Invoke("ReceiveLoot", 1.5f);
 
         //call a delayed function, which plays the closing anim
         Invoke("DelayedClosing", 3.0f);
@@ -105,5 +112,28 @@ public class LootingLogic : MonoBehaviour
     {
         //play container closing anim here
         containerAnimator.SetTrigger("containerClosing");
+    }
+
+    private void ReceiveLoot()
+    {
+        //enable the lootBackgroundImage
+        if (canvasLootMessageBackground.GetComponent<Image>().isActiveAndEnabled == false)
+        {
+            lootBackgroundImage = canvasLootMessageBackground.GetComponent<Image>();
+            lootBackgroundImage.enabled = true;
+        }
+
+        //enable and change the text
+        lootMessageText = canvasLootMessageBackground.transform.GetChild(0).gameObject.GetComponent<TMP_Text>();
+        lootMessageText.SetText("You looted " + Random.Range(30, 150) + " coins!");
+        lootMessageText.enabled = true;
+
+        Invoke("DelayedDisableCanvasLootMessage", 3.5f);
+    }
+
+    private void DelayedDisableCanvasLootMessage()
+    {
+        lootBackgroundImage.enabled = false;
+        lootMessageText.enabled = false;
     }
 }
