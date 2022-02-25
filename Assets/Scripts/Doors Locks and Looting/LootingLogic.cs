@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using TMPro.Examples;
 
 public class LootingLogic : MonoBehaviour
 {
@@ -24,6 +25,12 @@ public class LootingLogic : MonoBehaviour
     private Image lootBackgroundImage;
     private TMP_Text lootMessageText;
 
+    private WarpTextExample warpTextScript;
+
+    [SerializeField] AudioClip[] coinSounds;
+
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +45,12 @@ public class LootingLogic : MonoBehaviour
 
         //referencing the canvasLootMessageBackground by tag
         canvasLootMessageBackground = GameObject.FindGameObjectWithTag("CanvasLootMessage");
+
+        //referencing the TMPro WrapTextExample - script
+        warpTextScript = canvasLootMessageBackground.transform.GetChild(0).gameObject.GetComponent<WarpTextExample>();
+
+        //referencing the audio source component on this scripts holder go
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -129,11 +142,15 @@ public class LootingLogic : MonoBehaviour
         lootMessageText.enabled = true;
 
         Invoke("DelayedDisableCanvasLootMessage", 3.5f);
+
+        //Play the coins audio
+        audioSource.PlayOneShot(coinSounds[Random.Range(0, coinSounds.Length)]);
     }
 
     private void DelayedDisableCanvasLootMessage()
     {
         lootBackgroundImage.enabled = false;
         lootMessageText.enabled = false;
+        warpTextScript.textHasBeenWrapped = false;
     }
 }

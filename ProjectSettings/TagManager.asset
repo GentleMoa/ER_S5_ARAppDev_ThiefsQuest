@@ -20,6 +20,7 @@ TagManager:
   - Lightning
   - LootingButton
   - CanvasLootMessage
+  - ARSessionOrigin
   layers:
   - Default
   - TransparentFX

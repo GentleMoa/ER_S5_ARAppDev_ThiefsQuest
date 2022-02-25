@@ -35,6 +35,9 @@ public class AR_Initializer : MonoBehaviour
     //bool that contains whether there already is an plane or not
     public bool levelStartPlaced = false;
 
+    [SerializeField] AudioClip[] trapdoorSounds;
+    [SerializeField] AudioSource audioSource;
+
     //DEBUGGING
     [SerializeField]
     ARRaycastManager arRayManager;
@@ -147,7 +150,16 @@ public class AR_Initializer : MonoBehaviour
 
             //Set the bool to false to prevent more than one level ground plane being placed
             levelStartPlaced = true;
+
+            //Play Trapdoor Audio
+            audioSource.PlayOneShot(trapdoorSounds[0]);
+            Invoke("PlaySecondTrapdoorAudio", 2.0f);
         }
+    }
+
+    private void PlaySecondTrapdoorAudio()
+    {
+        audioSource.PlayOneShot(trapdoorSounds[1]);
     }
 
 }
