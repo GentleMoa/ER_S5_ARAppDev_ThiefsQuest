@@ -28,6 +28,8 @@ public class LootingLogic : MonoBehaviour
     private WarpTextExample warpTextScript;
 
     [SerializeField] AudioClip[] coinSounds;
+    [SerializeField] AudioClip[] containerOpenSounds;
+    [SerializeField] AudioClip[] containerCloseSounds;
 
     private AudioSource audioSource;
 
@@ -114,7 +116,10 @@ public class LootingLogic : MonoBehaviour
         containerOpened = true;
         //play container opening anim here
         containerAnimator.SetTrigger("containerOpening");
+        //play a random container opening audio clip from the respective array
+        audioSource.PlayOneShot(containerOpenSounds[Random.Range(0, containerOpenSounds.Length)]);
 
+        //Invoke the ReceiveLoot function
         Invoke("ReceiveLoot", 1.5f);
 
         //call a delayed function, which plays the closing anim
@@ -125,6 +130,8 @@ public class LootingLogic : MonoBehaviour
     {
         //play container closing anim here
         containerAnimator.SetTrigger("containerClosing");
+        //call DelayedClosingAudio function
+        Invoke("DelayedClosingAudio", 1.0f);
     }
 
     private void ReceiveLoot()
@@ -149,8 +156,17 @@ public class LootingLogic : MonoBehaviour
 
     private void DelayedDisableCanvasLootMessage()
     {
-        lootBackgroundImage.enabled = false;
+        if (lootBackgroundImage.enabled == true)
+        {
+            lootBackgroundImage.enabled = false;
+        }
         lootMessageText.enabled = false;
         warpTextScript.textHasBeenWrapped = false;
+    }
+
+    private void DelayedClosingAudio()
+    {
+        //play a random container closing audio clip from the respective array
+        audioSource.PlayOneShot(containerCloseSounds[Random.Range(0, containerCloseSounds.Length)]);
     }
 }
