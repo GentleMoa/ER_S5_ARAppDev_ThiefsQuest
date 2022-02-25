@@ -34,6 +34,7 @@ public class PropsPerformantColliderToggle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (levelHandlerObj.GetComponent<RoomCounter>().levelGenerationFinished == true && propsCollsDisabled == false && roomAge > 1)
         {
             //disable props colliders here
@@ -47,6 +48,7 @@ public class PropsPerformantColliderToggle : MonoBehaviour
                 }
             }
         }
+        */
     }
 
     public void DisablePropsColliders()
@@ -62,7 +64,7 @@ public class PropsPerformantColliderToggle : MonoBehaviour
             }
         }
 
-        //Debug.Log("PROPS COLLIDERS: DISABLED");
+        //Debug.Log(name + "PROPS COLLIDERS: DISABLED");
     }
 
     public void EnablePropsColliders()
@@ -78,7 +80,7 @@ public class PropsPerformantColliderToggle : MonoBehaviour
             }
         }
 
-        //Debug.Log("PROPS COLLIDERS: ENABLED");
+        //Debug.Log(name + "PROPS COLLIDERS: ENABLED");
     }
 
     private void RequestRoomAge()

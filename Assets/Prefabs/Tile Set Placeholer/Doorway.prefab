@@ -260,3 +260,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unlockUI: {fileID: 2942329891192622889, guid: d55dc8f45c7851f44aff6e7f8fdd0334, type: 3}
   unlockButton: {fileID: 0}
+  lockpickingInterfaceToSpawn3D: {fileID: 1998093165843259173, guid: 433ac2e458f00b54983a7b6274fe5b91, type: 3}

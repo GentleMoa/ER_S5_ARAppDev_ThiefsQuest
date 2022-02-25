@@ -7,7 +7,6 @@ namespace TMPro.Examples
 
     public class WarpTextExample : MonoBehaviour
     {
-
         private TMP_Text m_TextComponent;
 
         public AnimationCurve VertexCurve = new AnimationCurve(new Keyframe(0, 0), new Keyframe(0.25f, 2.0f), new Keyframe(0.5f, 0), new Keyframe(0.75f, 2.0f), new Keyframe(1, 0f));
@@ -15,15 +14,21 @@ namespace TMPro.Examples
         public float SpeedMultiplier = 1.0f;
         public float CurveScale = 1.0f;
 
+        public bool textHasBeenWrapped = false;
+
         void Awake()
         {
             m_TextComponent = gameObject.GetComponent<TMP_Text>();
         }
 
-
-        void Start()
+        private void Update()
         {
-            StartCoroutine(WarpText());
+            if (m_TextComponent.enabled == true && textHasBeenWrapped == false)
+            {
+                StartCoroutine(WarpText());
+
+                textHasBeenWrapped = true;
+            }
         }
 
 
@@ -53,7 +58,7 @@ namespace TMPro.Examples
             Matrix4x4 matrix;
 
             m_TextComponent.havePropertiesChanged = true; // Need to force the TextMeshPro Object to be updated.
-            CurveScale *= 10;
+            //CurveScale *= 10;
             float old_CurveScale = CurveScale;
             AnimationCurve old_curve = CopyAnimationCurve(VertexCurve);
 
