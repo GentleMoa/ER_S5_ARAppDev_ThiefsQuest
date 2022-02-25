@@ -23,6 +23,9 @@ public class DoorLogic : MonoBehaviour
 
     private Camera arCamera;
 
+    [SerializeField] AudioClip[] unlockSounds;
+    [SerializeField] AudioSource audioSource;
+
     private GameObject arSessionOrigin;
     private bool lockpickingProcessOngoing = false;
 
@@ -126,5 +129,7 @@ public class DoorLogic : MonoBehaviour
 
         //Once the lockpicking mini-game has been completed, the door this script is on has the be opened using the UnlockDoor() function!
         UnlockDoor();
+        //Play the unlocking audio!
+        audioSource.PlayOneShot(unlockSounds[Random.Range(0, unlockSounds.Length)]);
     }
 }
