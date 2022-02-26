@@ -37,6 +37,11 @@ public class RoomSpawner : MonoBehaviour
     void Update()
     {
         TerminateScript();
+
+        if (levelHandlerObj.GetComponent<RoomCounter>().levelGenerationFinished == true)
+        {
+            gameObject.GetComponent<Collider>().enabled = false;
+        }
     }
 
     public void OnTriggerStay(Collider other)

@@ -38,6 +38,14 @@ public class AR_Initializer : MonoBehaviour
     [SerializeField] AudioClip[] trapdoorSounds;
     [SerializeField] AudioSource audioSource;
 
+    [SerializeField] RoomCounter roomCounterScript;
+    private bool controlsEnabled = false;
+    [SerializeField] GameObject placeLevelButton;
+    [SerializeField] GameObject joystick;
+    [SerializeField] GameObject sneakButton;
+
+    [SerializeField] GameObject loadingContent;
+
     //DEBUGGING
     [SerializeField]
     ARRaycastManager arRayManager;
@@ -71,6 +79,20 @@ public class AR_Initializer : MonoBehaviour
         // - - - "AR_PlaceLevel" - Code
         UpdatePlacementPose();
         UpdatePlacementIndicator();
+
+        if (roomCounterScript.levelGenerationFinished == true && controlsEnabled == false)
+        {
+            //Enable Controller Buttons (Joystick & SneakButton)
+            joystick.GetComponent<Image>().enabled = true;
+            joystick.transform.GetChild(0).GetComponent<Image>().enabled = true;
+            sneakButton.GetComponent<Image>().enabled = true;
+
+            //Disabling the loadingContent ("loadingscreen -ish")
+            loadingContent.SetActive(false);
+
+            //flag
+            controlsEnabled = true;
+        }
     }
 
     // - - - Function Archive - - - //
@@ -150,6 +172,12 @@ public class AR_Initializer : MonoBehaviour
 
             //Set the bool to false to prevent more than one level ground plane being placed
             levelStartPlaced = true;
+
+            //disabling the placeLevelButton, because it is not needed anymore
+            placeLevelButton.SetActive(false);
+
+            //enable the loadingContent
+            loadingContent.SetActive(true);
 
             //Play Trapdoor Audio
             audioSource.PlayOneShot(trapdoorSounds[0]);
