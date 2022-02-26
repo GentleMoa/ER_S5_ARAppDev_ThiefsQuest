@@ -33,6 +33,12 @@ public class LootingLogic : MonoBehaviour
 
     private AudioSource audioSource;
 
+    private int lootedCoin;
+    private GameObject totalLootUI;
+    private TMP_Text totalLootText;
+
+    public static int coinAmount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +59,9 @@ public class LootingLogic : MonoBehaviour
 
         //referencing the audio source component on this scripts holder go
         audioSource = GetComponent<AudioSource>();
+
+        //reference the Total Loot UI
+        totalLootUI = GameObject.FindGameObjectWithTag("TotalLootUI");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -143,10 +152,19 @@ public class LootingLogic : MonoBehaviour
             lootBackgroundImage.enabled = true;
         }
 
+        //Randomize the amount of gold looted
+        lootedCoin = Random.Range(2, 50);
+
         //enable and change the text
         lootMessageText = canvasLootMessageBackground.transform.GetChild(0).gameObject.GetComponent<TMP_Text>();
-        lootMessageText.SetText("You looted " + Random.Range(30, 150) + " coins!");
+        lootMessageText.SetText("You looted " + lootedCoin + " coins!");
         lootMessageText.enabled = true;
+
+        //Add the freshly looted coin to your total coin amount
+        coinAmount = coinAmount + lootedCoin;
+
+        //update the totalLootUI
+        UpdateTotalLootUI();
 
         Invoke("DelayedDisableCanvasLootMessage", 3.5f);
 
@@ -168,5 +186,11 @@ public class LootingLogic : MonoBehaviour
     {
         //play a random container closing audio clip from the respective array
         audioSource.PlayOneShot(containerCloseSounds[Random.Range(0, containerCloseSounds.Length)]);
+    }
+
+    private void UpdateTotalLootUI()
+    {
+        totalLootText = totalLootUI.transform.GetChild(0).gameObject.GetComponent<TMP_Text>();
+        totalLootText.text = coinAmount.ToString();
     }
 }
