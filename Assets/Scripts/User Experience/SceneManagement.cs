@@ -31,7 +31,7 @@ public class SceneManagement : MonoBehaviour
 
     public void LoadScene_Game()
     {
-        if (SceneManager.GetActiveScene().name == "Scene_Menu")
+        if (SceneManager.GetActiveScene().name == "Scene_Menu" /*|| SceneManager.GetActiveScene().name == "Scene_Tutorial"*/)
         {
             SceneManager.LoadScene("Scene_1");
         }
