@@ -12,9 +12,14 @@ public class CameraPermissionHandling : MonoBehaviour
     private bool infoButtonPressed;
     private bool cameraPermissionGranted = false;
 
+    private GameObject sceneManagerObj;
+
     // Start is called before the first frame update
     void Start()
     {
+        sceneManagerObj = GameObject.FindGameObjectWithTag("Scene Manager");
+
+        
         //if the AR Session object exists, ...
         if (arSession_CameraPermissionPromptTrigger != null)
         {
@@ -36,11 +41,6 @@ public class CameraPermissionHandling : MonoBehaviour
             //disable it
             horizontalReminderInfo.SetActive(false);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
     }
 
@@ -53,6 +53,7 @@ public class CameraPermissionHandling : MonoBehaviour
         } 
     }
 
+    
     public void ShowHorizontalReminderInfo()
     {
         if (horizontalReminderInfo.activeSelf == false)
@@ -60,6 +61,7 @@ public class CameraPermissionHandling : MonoBehaviour
             horizontalReminderInfo.SetActive(true);
         }
     }
+    
 
     public void CameraPermissionProcess()
     {
