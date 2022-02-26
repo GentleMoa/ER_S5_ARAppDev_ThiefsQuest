@@ -21,6 +21,7 @@ TagManager:
   - LootingButton
   - CanvasLootMessage
   - ARSessionOrigin
+  - TotalLootUI
   layers:
   - Default
   - TransparentFX

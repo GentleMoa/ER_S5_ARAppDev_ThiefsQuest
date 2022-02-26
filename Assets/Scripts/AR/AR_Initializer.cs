@@ -5,9 +5,10 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.Experimental.XR;
 using UnityEngine.XR.ARSubsystems;
-
 using UnityEngine.UI;
 using System;
+using TMPro;
+using TMPro.Examples;
 
 public class AR_Initializer : MonoBehaviour
 {
@@ -45,6 +46,7 @@ public class AR_Initializer : MonoBehaviour
     [SerializeField] GameObject sneakButton;
 
     [SerializeField] GameObject loadingContent;
+    private GameObject totalLootUI;
 
     //DEBUGGING
     [SerializeField]
@@ -69,6 +71,9 @@ public class AR_Initializer : MonoBehaviour
         //creating a reference to the AR Camera
         arCamera = arOrigin.transform.GetChild(0).GetComponent<Camera>();
 
+        //referencing the totalLootUI
+        totalLootUI = GameObject.FindGameObjectWithTag("TotalLootUI");
+
         //DEBUGGING
         placementIndicator.SetActive(false);
     }
@@ -89,6 +94,10 @@ public class AR_Initializer : MonoBehaviour
 
             //Disabling the loadingContent ("loadingscreen -ish")
             loadingContent.SetActive(false);
+
+            //Enable TotalLootUI
+            totalLootUI.GetComponent<Image>().enabled = true;
+            totalLootUI.transform.GetChild(0).GetComponent<TMP_Text>().enabled = true;
 
             //flag
             controlsEnabled = true;
