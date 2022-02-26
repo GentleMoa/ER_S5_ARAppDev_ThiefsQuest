@@ -2191,8 +2191,6 @@ MonoBehaviour:
   _animator: {fileID: 4842755252178588517}
   playerMovementSpeed: 0.5
   crouching: 0
-  audioWalking: {fileID: 8300000, guid: 9c8b8a6fe9b662d4ca6f020fd1b45b57, type: 3}
-  audioRunning: {fileID: 8300000, guid: 5630d19afc2f49b40a337ba77345c743, type: 3}
 --- !u!114 &2041975689434376312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2206,6 +2204,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btn_crouching: 0
+  sneakSpriteStealthed: {fileID: 21300000, guid: 9e2f4139610afc341bb9b0ed445faafd, type: 3}
+  sneakSpriteUnstealthed: {fileID: 21300000, guid: 125e73ea2a1961044ba6a899c69f69f5, type: 3}
 --- !u!114 &7342497943742706504
 MonoBehaviour:
   m_ObjectHideFlags: 0
