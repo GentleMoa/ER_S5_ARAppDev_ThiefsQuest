@@ -22,6 +22,12 @@ TagManager:
   - CanvasLootMessage
   - ARSessionOrigin
   - TotalLootUI
+  - AudioHandler
+  - SkipButton
+  - MenuButton
+  - ToGameButton
+  - ToTutorialButton
+  - GotItButton
   layers:
   - Default
   - TransparentFX
