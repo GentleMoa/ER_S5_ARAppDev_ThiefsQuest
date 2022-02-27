@@ -373,8 +373,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.3882353, g: 0.21176471, b: 0.09019608, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 0.39607844, g: 0.2784314, b: 0.2, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.2
@@ -397,6 +397,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2044840892}
         m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
         m_MethodName: LoadScene_Menu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1196481187}
+        m_TargetAssemblyTypeName: UIAudioHandling, Assembly-CSharp
+        m_MethodName: UIButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -540,8 +552,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.38679248, g: 0.21139319, b: 0.08940016, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 0.3962264, g: 0.27931497, b: 0.1999822, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.2
@@ -564,6 +576,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2044840892}
         m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
         m_MethodName: LoadScene_Tutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1196481187}
+        m_TargetAssemblyTypeName: UIAudioHandling, Assembly-CSharp
+        m_MethodName: UIButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -621,10 +645,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1196481184}
   - component: {fileID: 1196481186}
+  - component: {fileID: 1196481187}
   - component: {fileID: 1196481185}
   m_Layer: 0
-  m_Name: Music Handler
-  m_TagString: Untagged
+  m_Name: Audio Handler
+  m_TagString: AudioHandler
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -759,6 +784,25 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f2b379a27e59cf74ebf3c5bb04bffe11, type: 3}
   - {fileID: 8300000, guid: 98b1d2a01ce7bc0438f2ce61a0d1b3cc, type: 3}
   - {fileID: 8300000, guid: 8f5e8a22efca0334baae318fcf309269, type: 3}
+  audioSource: {fileID: 1196481185}
+--- !u!114 &1196481187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196481183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebbf2e36da80a8c41aebc14fa5668880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paperUISounds:
+  - {fileID: 8300000, guid: 0c37bd9e4d258d4439fda024438948ef, type: 3}
+  - {fileID: 8300000, guid: 181c31fa54fc07e49a2e6b75b4d2072b, type: 3}
+  - {fileID: 8300000, guid: 5995e4eecaa08104aafe6e81636de2ef, type: 3}
+  - {fileID: 8300000, guid: 0e8eddcf75a37e64d9cbd9c2519ede50, type: 3}
+  scribbleSound: {fileID: 8300000, guid: 6601d281a98869440987ab869d00c6a9, type: 3}
   audioSource: {fileID: 1196481185}
 --- !u!1 &1466196488
 GameObject:
@@ -1214,6 +1258,7 @@ GameObject:
   - component: {fileID: 2044840891}
   - component: {fileID: 2044840892}
   - component: {fileID: 2044840893}
+  - component: {fileID: 2044840894}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Scene Manager
@@ -1259,3 +1304,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f497e2d94d876742a0bb4a60243cfb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2044840894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044840890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7a2139a25cdce46b41eaaf1edbcfb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageturnSFX: {fileID: 8300000, guid: 0ea6f7f3d9bfe634c94a39e69a1bed98, type: 3}

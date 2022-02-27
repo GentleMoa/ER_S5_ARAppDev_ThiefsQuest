@@ -5,6 +5,7 @@ using UnityEngine;
 public class FinalNotice : MonoBehaviour
 {
     [SerializeField] private GameObject cameraPermissionInformer;
+    public bool cameraPermissionPromptActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,5 +19,6 @@ public class FinalNotice : MonoBehaviour
     public void ShowCameraPermissionInformer()
     {
         cameraPermissionInformer.SetActive(true);
+        cameraPermissionPromptActive = true;
     }
 }

@@ -36,8 +36,8 @@ public class AR_Initializer : MonoBehaviour
     //bool that contains whether there already is an plane or not
     public bool levelStartPlaced = false;
 
-    [SerializeField] AudioClip[] trapdoorSounds;
-    [SerializeField] AudioSource audioSource;
+    //[SerializeField] AudioClip[] trapdoorSounds;
+    //[SerializeField] AudioSource audioSource;
 
     [SerializeField] RoomCounter roomCounterScript;
     private bool controlsEnabled = false;
@@ -189,14 +189,16 @@ public class AR_Initializer : MonoBehaviour
             loadingContent.SetActive(true);
 
             //Play Trapdoor Audio
-            audioSource.PlayOneShot(trapdoorSounds[0]);
-            Invoke("PlaySecondTrapdoorAudio", 2.0f);
+            //audioSource.PlayOneShot(trapdoorSounds[0]);
+            //Invoke("PlaySecondTrapdoorAudio", 2.0f);
         }
     }
 
+    /*
     private void PlaySecondTrapdoorAudio()
     {
         audioSource.PlayOneShot(trapdoorSounds[1]);
     }
+    */
 
 }
