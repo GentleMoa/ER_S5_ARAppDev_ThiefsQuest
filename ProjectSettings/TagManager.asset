@@ -28,6 +28,7 @@ TagManager:
   - ToGameButton
   - ToTutorialButton
   - GotItButton
+  - IngameSceneManager
   layers:
   - Default
   - TransparentFX

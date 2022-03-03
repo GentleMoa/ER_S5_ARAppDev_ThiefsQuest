@@ -28,6 +28,7 @@ public class DoorLogic : MonoBehaviour
 
     private GameObject arSessionOrigin;
     private bool lockpickingProcessOngoing = false;
+    private IngameSceneManagement ingameSceneManagement;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,7 @@ public class DoorLogic : MonoBehaviour
         arCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
         arSessionOrigin = GameObject.FindGameObjectWithTag("ARSessionOrigin");
+        ingameSceneManagement = GameObject.FindGameObjectWithTag("IngameSceneManager").GetComponent<IngameSceneManagement>();
     }
 
     // Update is called once per frame
@@ -122,14 +124,25 @@ public class DoorLogic : MonoBehaviour
         Destroy(transform.GetChild(1).gameObject);
 
         //Spawning the 3D Lockpicking Interface, which represents the lockpicking mini game the user has to complete in order to open the door
-        //Instantiate(lockpickingInterfaceToSpawn3D, arCamera.transform.position + new Vector3(0.0f, - 1.0f, 7.0f), /*Quaternion.identity*/ arCamera.transform.rotation * Quaternion.Euler(0.0f, 90.0f, -90.0f), arCamera.transform);
+        //Instantiate(lockpickingInterfaceToSpawn3D, arCamera.transform.position + new Vector3(-0.073f, -0.13f, +0.15f), Quaternion.identity * Quaternion.Euler(0.0f, 90.0f, -60.0f) /* arCamera.transform.rotation * Quaternion.Euler(0.0f, 90.0f, -90.0f) */ /* , arCamera.transform */);
 
         //Telling the game that now the lockpicking mini-game has started
-        lockpickingProcessOngoing = true;
+        //lockpickingProcessOngoing = true;
+
+        //placeholder code for intializing the lockpicking mini-game
+        //ingameSceneManagement.LoadLockpickingScene();
+
+
+
+
+        //this is the placeholder code for unlocking the door without the lockpicking mini-game
+        
 
         //Once the lockpicking mini-game has been completed, the door this script is on has the be opened using the UnlockDoor() function!
         UnlockDoor();
         //Play the unlocking audio!
         audioSource.PlayOneShot(unlockSounds[Random.Range(0, unlockSounds.Length)]);
+
+        
     }
 }
