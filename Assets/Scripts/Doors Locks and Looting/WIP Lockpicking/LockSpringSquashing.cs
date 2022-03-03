@@ -9,13 +9,14 @@ public class LockSpringSquashing : MonoBehaviour
 
     public float distanceSpringToBolt;
     public Vector3 initialSize;
-    public float scaleMultiplier;
+    public float scaleMultiplier; //for a lock size of 0.1 the scaleMultiplier should be: 1.84 (the spring value on the bolt's spring joint component should be 50 at lock size of 01.)
+                                  //for a lock size of 0.01 the scaleMultiplier should be: 1.84 * 10
 
     // Start is called before the first frame update
     void Start()
     {
         //setting up base values
-        scaleMultiplier = 1.84f;
+        scaleMultiplier = 1.84f * 10.0f;
         initialSize = transform.localScale;
     }
 
