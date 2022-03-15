@@ -29,6 +29,14 @@ TagManager:
   - ToTutorialButton
   - GotItButton
   - IngameSceneManager
+  - Lockpick_1
+  - Lockpick_2
+  - Lockpick_3
+  - Lockpick_4
+  - UIDebugger
+  - Lockpick_Mesh
+  - Lockpick_SubColl
+  - ToMenuButton
   layers:
   - Default
   - TransparentFX
@@ -37,7 +45,7 @@ TagManager:
   - Water
   - UI
   - Wall
-  - 
+  - Lockpick_Plane
   - 
   - 
   - 
