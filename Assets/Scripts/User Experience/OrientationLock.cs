@@ -16,7 +16,12 @@ public class OrientationLock : MonoBehaviour
         //In the following scenes, the orientation will be locked in landscape.left (horizontal) mode: Scene_1
         else if (SceneManager.GetActiveScene().name == "Scene_1")
         {
-            Screen.orientation = ScreenOrientation.LandscapeLeft;
+            Invoke("TurnOrientationLandscapeMode", 1.0f);
         }
+    }
+
+    private void TurnOrientationLandscapeMode()
+    {
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
     }
 }
