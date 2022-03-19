@@ -9,7 +9,7 @@ public class LockpickingLogic : MonoBehaviour
     //Camera
     private Camera arCamera;
     //Lockpicking objects
-    private GameObject lockpickGeneral;
+    public GameObject lockpickGeneral;
     [SerializeField] private GameObject lockpick_1;
     [SerializeField] private GameObject lockpick_2;
     [SerializeField] private GameObject lockpick_3;
@@ -18,10 +18,6 @@ public class LockpickingLogic : MonoBehaviour
     [SerializeField] private LockpicksFollowGyro lockpick_2_gyroScript;
     [SerializeField] private LockpicksFollowGyro lockpick_3_gyroScript;
     [SerializeField] private LockpicksFollowGyro lockpick_4_gyroScript;
-    //private Rigidbody lockpick_1_rb;
-    //private Rigidbody lockpick_2_rb;
-    //private Rigidbody lockpick_3_rb;
-    //private Rigidbody lockpick_4_rb;
     //Lockpicks State Flags
     public bool lockpick_1_Active = false;
     public bool lockpick_2_Active = false;
@@ -40,31 +36,43 @@ public class LockpickingLogic : MonoBehaviour
     private bool lockpick_2_restFlag = false;
     private bool lockpick_3_restFlag = false;
     private bool lockpick_4_restFlag = false;
-    //Lockpicks Action Positions & Flags
+    //Lockpicks Action Positions, Rotations & Flags
     private Vector3 lockpick_1_actionPos;
     private Vector3 lockpick_2_actionPos;
     private Vector3 lockpick_3_actionPos;
     private Vector3 lockpick_4_actionPos;
+    //private Quaternion lockpick_1_actionRot;
+    //private Quaternion lockpick_2_actionRot;
+    //private Quaternion lockpick_3_actionRot;
+    //private Quaternion lockpick_4_actionRot;
     private bool lockpick_1_actionFlag = false;
     private bool lockpick_2_actionFlag = false;
     private bool lockpick_3_actionFlag = false;
     private bool lockpick_4_actionFlag = false;
-
+    //Rigidbody variables
+    private bool lockpick_1_hasRB = false;
+    private bool lockpick_2_hasRB = false;
+    private bool lockpick_3_hasRB = false;
+    private bool lockpick_4_hasRB = false;
+    //UI Debugging
     public GameObject uiDebugger;
-
+    private bool showUIDebugger = false;
+    //Lockpick Inputs
     public Vector2 touchPosition = default;
     public bool onTouchHold = false;
     public Vector3 dragPosition = new Vector3();
     [SerializeField] private LayerMask lockpickLayer;
-
-    private bool showUIDebugger = false;
-
+    //Controls / UI Management
     private bool lockpickingOngoing = true;
     private bool controlsDisabled = false;
     private GameObject uiJoystick;
     private GameObject uiSneakButton;
     private GameObject uiTotalLoot;
     private GameObject uiMenuButton;
+    //Gyroscope Handling
+    private Gyroscope gyro;
+    private Quaternion gyroRotation;
+    private bool gyroActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -76,12 +84,6 @@ public class LockpickingLogic : MonoBehaviour
 
         //disabling the Lockpick Raycast Plane childed to the camera
         arCamera.transform.GetChild(0).gameObject.SetActive(false);
-
-        //disabling the follow gyro scripts on all lockpicks
-        //lockpick_1_gyroScript.enabled = false;
-        //lockpick_2_gyroScript.enabled = false;
-        //lockpick_3_gyroScript.enabled = false;
-        //lockpick_4_gyroScript.enabled = false;
     }
 
     // Update is called once per frame
@@ -174,11 +176,6 @@ public class LockpickingLogic : MonoBehaviour
                         lockpick_2_actionFlag = false;
                         lockpick_3_actionFlag = false;
                         lockpick_4_actionFlag = false;
-                        //rb is kinematic setting
-                        //lockpick_1_rb.isKinematic = false;
-                        //lockpick_2_rb.isKinematic = true;
-                        //lockpick_3_rb.isKinematic = true;
-                        //lockpick_4_rb.isKinematic = true;
                     }
 
                     //if the hit object has the tag "Lockpick_2", then ...
@@ -208,11 +205,6 @@ public class LockpickingLogic : MonoBehaviour
                         lockpick_1_actionFlag = false;
                         lockpick_3_actionFlag = false;
                         lockpick_4_actionFlag = false;
-                        //rb is kinematic setting
-                        //lockpick_1_rb.isKinematic = true;
-                        //lockpick_2_rb.isKinematic = false;
-                        //lockpick_3_rb.isKinematic = true;
-                        //lockpick_4_rb.isKinematic = true;
                     }
 
                     //if the hit object has the tag "Lockpick_3", then ...
@@ -242,11 +234,6 @@ public class LockpickingLogic : MonoBehaviour
                         lockpick_1_actionFlag = false;
                         lockpick_2_actionFlag = false;
                         lockpick_4_actionFlag = false;
-                        //rb is kinematic setting
-                        //lockpick_1_rb.isKinematic = true;
-                        //lockpick_2_rb.isKinematic = true;
-                        //lockpick_3_rb.isKinematic = false;
-                        //lockpick_4_rb.isKinematic = true;
                     }
 
                     //if the hit object has the tag "Lockpick_4", then ...
@@ -276,17 +263,14 @@ public class LockpickingLogic : MonoBehaviour
                         lockpick_1_actionFlag = false;
                         lockpick_2_actionFlag = false;
                         lockpick_3_actionFlag = false;
-                        //rb is kinematic setting
-                        //lockpick_1_rb.isKinematic = true;
-                        //lockpick_2_rb.isKinematic = true;
-                        //lockpick_3_rb.isKinematic = true;
-                        //lockpick_4_rb.isKinematic = false;
                     }
 
                     #endregion
 
                 }
             }
+
+            #region TouchEnded
 
             //If stopped touching, onTouchHold is set to false
             if (touch.phase == TouchPhase.Ended)
@@ -295,16 +279,50 @@ public class LockpickingLogic : MonoBehaviour
                 onTouchHold = false;
                 //disabling the Lockpick Raycast Plane childed to the camera
                 arCamera.transform.GetChild(0).gameObject.SetActive(false);
+                //disabling the gyro
+                //DisableGyro();
+                /*
+                if (lockpick_1_hasRB == true)
+                {
+                    //destroy the rb component
+                    Destroy(lockpick_1.GetComponent<Rigidbody>());
+                    lockpick_1_hasRB = false;
+                }
+                else if (lockpick_2_hasRB == true)
+                {
+                    //destroy the rb component
+                    Destroy(lockpick_2.GetComponent<Rigidbody>());
+                    lockpick_2_hasRB = false;
+                }
+                else if (lockpick_3_hasRB == true)
+                {
+                    //destroy the rb component
+                    Destroy(lockpick_3.GetComponent<Rigidbody>());
+                    lockpick_3_hasRB = false;
+                }
+                else if (lockpick_4_hasRB == true)
+                {
+                    //destroy the rb component
+                    Destroy(lockpick_4.GetComponent<Rigidbody>());
+                    lockpick_4_hasRB = false;
+                }
+                */
             }
+
+            #endregion
 
             Lockpick_Input();
         }
 
         LockpickToActionPos();
-        UIDebuggerInfo();
+        //UIDebuggerInfo();
         ControlsDisabler();
         ControlsEnabler();
+
+        //GetGyroRotation();
     }
+
+    //Lockpick Functions
 
     #region LockpickToActionPos
 
@@ -316,11 +334,8 @@ public class LockpickingLogic : MonoBehaviour
             //move into action position
             lockpick_1.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.1f, this.transform.position.z - 0.1f);
             lockpick_1.transform.Rotate(-75.0f, 90.0f, -75.0f);
-            //adding a rb component
-            Rigidbody lockpick_1_rb = lockpick_1.AddComponent<Rigidbody>() as Rigidbody;
-            lockpick_1_rb.useGravity = false;
-            //activating the follow gyro script
-            //lockpick_1_gyroScript.enabled = true;
+            //saving the action pose rotation
+            //lockpick_1_actionRot = lockpick_1.transform.rotation;
             //set actionFlag
             lockpick_1_actionFlag = true;
         }
@@ -330,8 +345,8 @@ public class LockpickingLogic : MonoBehaviour
             //move into action position
             lockpick_2.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.1f, this.transform.position.z - 0.1f);
             lockpick_2.transform.Rotate(-75.0f, 90.0f, -75.0f);
-            //activating the follow gyro script
-            //lockpick_2_gyroScript.enabled = true;
+            //saving the action pose rotation
+            //lockpick_2_actionRot = lockpick_2.transform.rotation;
             //set actionFlag
             lockpick_2_actionFlag = true;
         }
@@ -341,8 +356,8 @@ public class LockpickingLogic : MonoBehaviour
             //move into action position
             lockpick_3.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.1f, this.transform.position.z - 0.1f);
             lockpick_3.transform.Rotate(-75.0f, 90.0f, -75.0f);
-            //activating the follow gyro script
-            //lockpick_3_gyroScript.enabled = true;
+            //saving the action pose rotation
+            //lockpick_3_actionRot = lockpick_3.transform.rotation;
             //set actionFlag
             lockpick_3_actionFlag = true;
         }
@@ -352,8 +367,8 @@ public class LockpickingLogic : MonoBehaviour
             //move into action position
             lockpick_4.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.1f, this.transform.position.z - 0.1f);
             lockpick_4.transform.Rotate(-75.0f, 90.0f, -75.0f);
-            //activating the follow gyro script
-            //lockpick_4_gyroScript.enabled = true;
+            //saving the action pose rotation
+            //lockpick_4_actionRot = lockpick_4.transform.rotation;
             //set actionFlag
             lockpick_4_actionFlag = true;
         }
@@ -370,10 +385,6 @@ public class LockpickingLogic : MonoBehaviour
         {
             lockpick_1.transform.position = lockpick_1_restPos;
             lockpick_1.transform.eulerAngles = lockpick_1_restRot;
-            //remove rb component
-            Destroy(lockpick_1.GetComponent<Rigidbody>());
-            //disabling the follow gyro script
-            //lockpick_1_gyroScript.enabled = false;
         }
     }
     private void Lockpick_2ToRestPos()
@@ -382,8 +393,6 @@ public class LockpickingLogic : MonoBehaviour
         {
             lockpick_2.transform.position = lockpick_2_restPos;
             lockpick_2.transform.eulerAngles = lockpick_2_restRot;
-            //disabling the follow gyro script
-            //lockpick_2_gyroScript.enabled = false;
         }
     }
     private void Lockpick_3ToRestPos()
@@ -392,8 +401,6 @@ public class LockpickingLogic : MonoBehaviour
         {
             lockpick_3.transform.position = lockpick_3_restPos;
             lockpick_3.transform.eulerAngles = lockpick_3_restRot;
-            //disabling the follow gyro script
-            //lockpick_3_gyroScript.enabled = false;
         }
     }
     private void Lockpick_4ToRestPos()
@@ -402,8 +409,6 @@ public class LockpickingLogic : MonoBehaviour
         {
             lockpick_4.transform.position = lockpick_4_restPos;
             lockpick_4.transform.eulerAngles = lockpick_4_restRot;
-            //disabling the follow gyro script
-            //lockpick_4_gyroScript.enabled = false;
         }
     }
 
@@ -419,6 +424,9 @@ public class LockpickingLogic : MonoBehaviour
             //dragPosition now stores the touchPosition on Screen with a offset from the camera z, translated into world space 
             //dragPosition = arCamera.ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, arCamera.transform.GetChild(0).transform.position.z));
             //dragPosition = arCamera.ScreenPointToRay()
+
+            //enabling the gyro
+            //EnableGyro();
 
             //enabling the Lockpick Raycast Plane childed to the camera
             arCamera.transform.GetChild(0).gameObject.SetActive(true);
@@ -436,36 +444,77 @@ public class LockpickingLogic : MonoBehaviour
             //placing the lockpicks at the dragPosition pos gives the player control over them.
             if (lockpick_1_Active == true)
             {
-                //method 1: updating the lockpick.pos to the drag.pos
+                /*
+                if (lockpick_1_hasRB == false)
+                {
+                    //adding a rb component
+                    Rigidbody lockpick_1_rb = lockpick_1.AddComponent<Rigidbody>() as Rigidbody;
+                    lockpick_1_rb.useGravity = false;
+                    lockpick_1_hasRB = true;
+                }
+                */
+                //Updating the lockpick.pos to the drag.pos
                 lockpick_1.transform.position = dragPosition;
-                //method 2: applying a force to the lockpicks rb to the drag.pos (this should take collisions into account)
-                //lockpick_1.GetComponent<Rigidbody>().AddForce(dragPosition, ForceMode.Force);
-                //rotation input by camera rotation
-                //Use Gyroscope!
-
+                //Rotate the lockpick like the camera
+                //lockpick_1.transform.localRotation = arCamera.transform.rotation /* gyroRotation */ /* * lockpick_1_actionRot */;
             }
             else if (lockpick_2_Active == true)
             {
+                /*
+                if (lockpick_2_hasRB == false)
+                {
+                    //adding a rb component
+                    Rigidbody lockpick_2_rb = lockpick_2.AddComponent<Rigidbody>() as Rigidbody;
+                    lockpick_2_rb.useGravity = false;
+                    lockpick_2_hasRB = true;
+                }
+                */
+                //Updating the lockpick.pos to the drag.pos
                 lockpick_2.transform.position = dragPosition;
-                //method 2: applying a force to the lockpicks rb to the drag.pos (this should take collisions into account)
-                //lockpick_2_rb.AddForce(dragPosition, ForceMode.Force);
+                //Rotate the lockpick like the camera
+                //lockpick_2.transform.localRotation = arCamera.transform.rotation /* gyroRotation */  /* * lockpick_2_actionRot */
+                ;
             }
             else if (lockpick_3_Active == true)
             {
+                /*
+                if (lockpick_3_hasRB == false)
+                {
+                    //adding a rb component
+                    Rigidbody lockpick_3_rb = lockpick_3.AddComponent<Rigidbody>() as Rigidbody;
+                    lockpick_3_rb.useGravity = false;
+                    lockpick_3_hasRB = true;
+                }
+                */
+                //Updating the lockpick.pos to the drag.pos
                 lockpick_3.transform.position = dragPosition;
-                //method 2: applying a force to the lockpicks rb to the drag.pos (this should take collisions into account)
-                //lockpick_3_rb.AddForce(dragPosition, ForceMode.Force);
+                //Rotate the lockpick like the camera
+                //lockpick_3.transform.localRotation = arCamera.transform.rotation /* gyroRotation */  /* * lockpick_3_actionRot */
+                ;
             }
             else if (lockpick_4_Active == true)
             {
+                /*
+                if (lockpick_4_hasRB == false)
+                {
+                    //adding a rb component
+                    Rigidbody lockpick_4_rb = lockpick_4.AddComponent<Rigidbody>() as Rigidbody;
+                    lockpick_4_rb.useGravity = false;
+                    lockpick_4_hasRB = true;
+                }
+                */
+                //Updating the lockpick.pos to the drag.pos
                 lockpick_4.transform.position = dragPosition;
-                //method 2: applying a force to the lockpicks rb to the drag.pos (this should take collisions into account)
-                //lockpick_4_rb.AddForce(dragPosition, ForceMode.Force);
+                //Rotate the lockpick like the camera
+                //lockpick_4.transform.localRotation = arCamera.transform.rotation /* gyroRotation */  /* * lockpick_4_actionRot */
+                ;
             }
         }
     }
 
     #endregion
+
+    //UI Debugging Functions
 
     #region UIDebugger
 
@@ -478,7 +527,7 @@ public class LockpickingLogic : MonoBehaviour
             uiDebugger.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().enabled = true;
             //uiDebugger.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = "Lockpick_1: " + lockpick_1_Active + ", Lockpick_2" + lockpick_2_Active + ", Lockpick_3" + lockpick_3_Active + ", Lockpick_4" + lockpick_4_Active;
             //uiDebugger.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = "touchPosition: " + touchPosition + ", onTouchHold: " + onTouchHold + ", dragPosition: " + dragPosition + ", CameraPos: " + arCamera.transform.position;
-            uiDebugger.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = "Lockpick rotation: " + lockpick_1.transform.rotation.eulerAngles;
+            uiDebugger.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = lockpickGeneral.tag + ": " + lockpickGeneral.transform.rotation.eulerAngles;
         }
 
         /*
@@ -493,6 +542,8 @@ public class LockpickingLogic : MonoBehaviour
                     }
 
     #endregion
+
+    //Controls
 
     #region ControlsDisabler
 
@@ -545,6 +596,51 @@ public class LockpickingLogic : MonoBehaviour
             controlsDisabled = false;
         }
     }
+
+    #endregion
+
+    //Gyro Functions
+
+    #region GyroHandling
+
+    /*
+    private void EnableGyro()
+    {
+        if (SystemInfo.supportsGyroscope == true && gyroActive == false)
+        {
+            gyro = Input.gyro;
+            gyro.enabled = true;
+            gyroActive = true;
+        }
+        else
+        {
+            Debug.Log("This device doesn't support a gyroscope!");
+        }
+    }
+
+    private void DisableGyro()
+    {
+        if (SystemInfo.supportsGyroscope == true && gyroActive == true)
+        {
+            gyro = Input.gyro;
+            gyro.enabled = false;
+            gyroActive = false;
+        }
+        else
+        {
+            Debug.Log("This device doesn't support a gyroscope!");
+        }
+    }
+
+    private void GetGyroRotation()
+    {
+        if (gyroActive == true)
+        {
+            gyroRotation = gyro.attitude;
+        }
+    }
+
+    */
 
     #endregion
 }
