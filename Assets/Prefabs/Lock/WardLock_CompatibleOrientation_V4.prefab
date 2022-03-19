@@ -166,7 +166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826638475007668098}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.001, y: -0.423, z: 0.927}
+  m_LocalPosition: {x: -0.097, y: -0.396, z: 0.927}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 8138140195432992024}
@@ -947,7 +947,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3361229636086861002
 Transform:
   m_ObjectHideFlags: 0
@@ -1781,8 +1781,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.06579765, y: 0.008066066, z: 0.022497691}
-  m_Center: {x: 0.028185606, y: -0.000073859475, z: 0.000028444827}
+  m_Size: {x: 0.06579765, y: 0.008066066, z: 0.021354558}
+  m_Center: {x: 0.028185612, y: -0.00007385935, z: 0.00060000445}
 --- !u!54 &3361229636889371948
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2131,6 +2131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6e062ecb5f47f40b4306880c4c1c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lockpickGeneral: {fileID: 0}
   lockpick_1: {fileID: 8138140195296997949}
   lockpick_2: {fileID: 8138140195305724836}
   lockpick_3: {fileID: 8138140195432992025}
@@ -2625,7 +2626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4052748115258827019}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.337, y: -0.53, z: 0.938}
+  m_LocalPosition: {x: -0.001, y: -0.439, z: 0.938}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 8749129791490102958}
@@ -3243,7 +3244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8008083631520046981}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.385, y: -0.605, z: 0.58}
+  m_LocalPosition: {x: -0.116, y: -0.528, z: 0.58}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 8794532351791831191}
@@ -3444,6 +3445,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8138140195296997948}
+  - component: {fileID: 2297313313005640489}
+  - component: {fileID: 2469257353389374258}
   m_Layer: 0
   m_Name: Lockpick_1
   m_TagString: Lockpick_1
@@ -3466,6 +3469,42 @@ Transform:
   m_Father: {fileID: 5060647243331419842}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2297313313005640489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138140195296997949}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20788f099dd0c504d88a7f267b21e000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Use:
+    Filter: 0
+    IgnoreStartedOverGui: 1
+    RequiredFingerCount: 2
+    RequiredMouseButtons: 0
+    RequiredSelectable: {fileID: 0}
+  _camera: {fileID: 0}
+  relative: 1
+  damping: -1
+  remainingTranslation: {x: 0, y: 0, z: 0}
+  remainingRotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &2469257353389374258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138140195296997949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fd14179e3f6af4c91e4197ca8b02c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentScript: {fileID: 8984706442766323638}
 --- !u!1 &8138140195305724836
 GameObject:
   m_ObjectHideFlags: 0
@@ -3475,6 +3514,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8138140195305724835}
+  - component: {fileID: 3925869557671114205}
+  - component: {fileID: 8995917213310231748}
   m_Layer: 0
   m_Name: Lockpick_2
   m_TagString: Lockpick_2
@@ -3490,13 +3531,49 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8138140195305724836}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.423, y: 1.834, z: -1.039}
+  m_LocalPosition: {x: -0.104, y: 1.748, z: -1.039}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5900644645081181339}
   m_Father: {fileID: 5060647243331419842}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3925869557671114205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138140195305724836}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20788f099dd0c504d88a7f267b21e000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Use:
+    Filter: 0
+    IgnoreStartedOverGui: 1
+    RequiredFingerCount: 2
+    RequiredMouseButtons: 0
+    RequiredSelectable: {fileID: 0}
+  _camera: {fileID: 0}
+  relative: 1
+  damping: -1
+  remainingTranslation: {x: 0, y: 0, z: 0}
+  remainingRotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &8995917213310231748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138140195305724836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fd14179e3f6af4c91e4197ca8b02c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentScript: {fileID: 8984706442766323638}
 --- !u!1 &8138140195432992025
 GameObject:
   m_ObjectHideFlags: 0
@@ -3506,6 +3583,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8138140195432992024}
+  - component: {fileID: 1288095595504127576}
+  - component: {fileID: 1075272875592309503}
   m_Layer: 0
   m_Name: Lockpick_3
   m_TagString: Lockpick_3
@@ -3521,13 +3600,49 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8138140195432992025}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.486, y: 1.819, z: -1.003}
+  m_LocalPosition: {x: -0.223, y: 1.771, z: -0.839}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2372173649554151801}
   m_Father: {fileID: 5060647243331419842}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1288095595504127576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138140195432992025}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20788f099dd0c504d88a7f267b21e000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Use:
+    Filter: 0
+    IgnoreStartedOverGui: 1
+    RequiredFingerCount: 2
+    RequiredMouseButtons: 0
+    RequiredSelectable: {fileID: 0}
+  _camera: {fileID: 0}
+  relative: 1
+  damping: -1
+  remainingTranslation: {x: 0, y: 0, z: 0}
+  remainingRotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &1075272875592309503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138140195432992025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fd14179e3f6af4c91e4197ca8b02c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentScript: {fileID: 8984706442766323638}
 --- !u!1 &8138140196046455029
 GameObject:
   m_ObjectHideFlags: 0
@@ -3537,6 +3652,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8138140196046455028}
+  - component: {fileID: 8916765443237071642}
+  - component: {fileID: 8756951570532819326}
   m_Layer: 0
   m_Name: Lockpick_4
   m_TagString: Lockpick_4
@@ -3552,13 +3669,49 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8138140196046455029}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.149, y: 2.046, z: -0.644}
+  m_LocalPosition: {x: -0.541, y: 1.939, z: -0.679}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1148578827516058600}
   m_Father: {fileID: 5060647243331419842}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8916765443237071642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138140196046455029}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20788f099dd0c504d88a7f267b21e000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Use:
+    Filter: 0
+    IgnoreStartedOverGui: 1
+    RequiredFingerCount: 2
+    RequiredMouseButtons: 0
+    RequiredSelectable: {fileID: 0}
+  _camera: {fileID: 0}
+  relative: 1
+  damping: -1
+  remainingTranslation: {x: 0, y: 0, z: 0}
+  remainingRotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &8756951570532819326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8138140196046455029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19fd14179e3f6af4c91e4197ca8b02c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentScript: {fileID: 8984706442766323638}
 --- !u!1 &9207443586666249397
 GameObject:
   m_ObjectHideFlags: 0
