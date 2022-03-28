@@ -37,6 +37,7 @@ TagManager:
   - Lockpick_Mesh
   - Lockpick_SubColl
   - ToMenuButton
+  - Lock_RaycastTarget
   layers:
   - Default
   - TransparentFX

@@ -30,7 +30,7 @@ namespace Lean.Touch
             RotateScriptManagement_L3();
             RotateScriptManagement_L4();
 
-            UIDebugging();
+            //UIDebugging();
         }
 
         #region RotateScriptManagement
@@ -99,9 +99,13 @@ namespace Lean.Touch
 
         private void UIDebugging()
         {
-            uiDebugger.GetComponent<Image>().enabled = true;
-            uiDebugger.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().enabled = true;
-            uiDebugger.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = parentScript.lockpickGeneral.tag + " rotate script enabled: " + parentScript.lockpickGeneral.gameObject.GetComponent<CustomRotateScript>().isActiveAndEnabled;
+            if (parentScript.lockpickGeneral != null)
+            {
+                uiDebugger.GetComponent<Image>().enabled = true;
+                uiDebugger.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().enabled = true;
+                uiDebugger.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = parentScript.lockpickGeneral.tag + " rotate script enabled: " + parentScript.lockpickGeneral.gameObject.GetComponent<CustomRotateScript>().isActiveAndEnabled;
+            }
+            
         }
     }
 }
