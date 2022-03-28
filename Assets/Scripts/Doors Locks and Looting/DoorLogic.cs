@@ -123,8 +123,8 @@ public class DoorLogic : MonoBehaviour
         //Destroy the Unlock UI
         Destroy(transform.GetChild(1).gameObject);
 
-        //Spawning the 3D Lockpicking Interface, which represents the lockpicking mini game the user has to complete in order to open the door
-        Instantiate(lockpickingInterfaceToSpawn3D, arCamera.transform.position + new Vector3(-0.073f, -0.13f, +0.15f), Quaternion.identity * Quaternion.Euler(0.0f, 90.0f, -60.0f) /* arCamera.transform.rotation * Quaternion.Euler(0.0f, 90.0f, -90.0f) */ /* , arCamera.transform */);
+        //Spawning the 3D Lockpicking Interface, which represents the lockpicking mini game the user has to complete in order to open the door (backup loc: -0.073f, -0.13f, +0.15f)
+        Instantiate(lockpickingInterfaceToSpawn3D, arCamera.transform.position + new Vector3(-0.001f, -0.17f, +0.25f), Quaternion.identity * Quaternion.Euler(0.0f, 90.0f, -60.0f) /* arCamera.transform.rotation * Quaternion.Euler(0.0f, 90.0f, -90.0f) */ /* , arCamera.transform */);
 
         //Telling the game that now the lockpicking mini-game has started
         //lockpickingProcessOngoing = true;

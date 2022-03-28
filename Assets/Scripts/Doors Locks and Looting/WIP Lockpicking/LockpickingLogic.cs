@@ -14,10 +14,6 @@ public class LockpickingLogic : MonoBehaviour
     [SerializeField] private GameObject lockpick_2;
     [SerializeField] private GameObject lockpick_3;
     [SerializeField] private GameObject lockpick_4;
-    [SerializeField] private LockpicksFollowGyro lockpick_1_gyroScript;
-    [SerializeField] private LockpicksFollowGyro lockpick_2_gyroScript;
-    [SerializeField] private LockpicksFollowGyro lockpick_3_gyroScript;
-    [SerializeField] private LockpicksFollowGyro lockpick_4_gyroScript;
     //Lockpicks State Flags
     public bool lockpick_1_Active = false;
     public bool lockpick_2_Active = false;
@@ -436,8 +432,15 @@ public class LockpickingLogic : MonoBehaviour
             RaycastHit hitObject_lockpick;
 
 
-            if (Physics.Raycast(ray_lockpick, out hitObject_lockpick, lockpickLayer))
+            if (Physics.Raycast(ray_lockpick, out hitObject_lockpick/*, lockpickLayer*/))
             {
+                
+                /*//Lockpick pos only updates, if raycast detects hit on target plane (IF THIS IS COMMENTED OUT, RAYCAST TARGET PLANE (CHILD OF CAMERA) IS DISABLED)
+                if (hitObject_lockpick.collider.gameObject.tag == "Lock_RaycastTarget")
+                {
+                    dragPosition = hitObject_lockpick.point;
+                }
+                */
                 dragPosition = hitObject_lockpick.point;
             }
 
@@ -596,51 +599,6 @@ public class LockpickingLogic : MonoBehaviour
             controlsDisabled = false;
         }
     }
-
-    #endregion
-
-    //Gyro Functions
-
-    #region GyroHandling
-
-    /*
-    private void EnableGyro()
-    {
-        if (SystemInfo.supportsGyroscope == true && gyroActive == false)
-        {
-            gyro = Input.gyro;
-            gyro.enabled = true;
-            gyroActive = true;
-        }
-        else
-        {
-            Debug.Log("This device doesn't support a gyroscope!");
-        }
-    }
-
-    private void DisableGyro()
-    {
-        if (SystemInfo.supportsGyroscope == true && gyroActive == true)
-        {
-            gyro = Input.gyro;
-            gyro.enabled = false;
-            gyroActive = false;
-        }
-        else
-        {
-            Debug.Log("This device doesn't support a gyroscope!");
-        }
-    }
-
-    private void GetGyroRotation()
-    {
-        if (gyroActive == true)
-        {
-            gyroRotation = gyro.attitude;
-        }
-    }
-
-    */
 
     #endregion
 }

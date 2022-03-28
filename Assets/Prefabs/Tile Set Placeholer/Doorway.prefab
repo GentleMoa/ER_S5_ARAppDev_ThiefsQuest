@@ -357,7 +357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unlockUI: {fileID: 2942329891192622889, guid: d55dc8f45c7851f44aff6e7f8fdd0334, type: 3}
   unlockButton: {fileID: 0}
-  lockpickingInterfaceToSpawn3D: {fileID: 3361229637228288931, guid: 48a21ceb5eb50314ab38c4407225aa23, type: 3}
+  lockpickingInterfaceToSpawn3D: {fileID: 2849020736485559895, guid: 118d58cbf71e728449ea6f25183d8248, type: 3}
   unlockSounds:
   - {fileID: 8300000, guid: 3465e8b31fcb32a4180ee16b75c512e6, type: 3}
   - {fileID: 8300000, guid: 14cecb17644b4f94fb3fc36864bd8bdd, type: 3}
