@@ -21,6 +21,7 @@
 -a="G:\Felix\Documents\Unity Projects\ExpandedRealities\S5\ARAppDev_ThiefsQuest\ER_S5_ARAppDev_ThiefsQuest\Library\PlayerScriptAssemblies\Unity.XR.ARSubsystems.dll"
 -a="G:\Felix\Documents\Unity Projects\ExpandedRealities\S5\ARAppDev_ThiefsQuest\ER_S5_ARAppDev_ThiefsQuest\Library\PlayerScriptAssemblies\LeanCommon.dll"
 -a="G:\Felix\Documents\Unity Projects\ExpandedRealities\S5\ARAppDev_ThiefsQuest\ER_S5_ARAppDev_ThiefsQuest\Library\PlayerScriptAssemblies\Unity.XR.ARFoundation.dll"
+-a="G:\Felix\Documents\Unity Projects\ExpandedRealities\S5\ARAppDev_ThiefsQuest\ER_S5_ARAppDev_ThiefsQuest\Library\PlayerScriptAssemblies\Unity.MemoryProfiler.dll"
 -a="G:\Felix\Documents\Unity Projects\ExpandedRealities\S5\ARAppDev_ThiefsQuest\ER_S5_ARAppDev_ThiefsQuest\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\AOT\Newtonsoft.Json.dll"
 -a="G:\Felix\Documents\Unity Projects\ExpandedRealities\S5\ARAppDev_ThiefsQuest\ER_S5_ARAppDev_ThiefsQuest\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Portable\Newtonsoft.Json.dll"
 -a="G:\Felix\Documents\Unity Projects\ExpandedRealities\S5\ARAppDev_ThiefsQuest\ER_S5_ARAppDev_ThiefsQuest\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll"
