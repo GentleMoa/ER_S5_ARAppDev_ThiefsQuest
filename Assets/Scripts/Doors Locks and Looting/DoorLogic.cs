@@ -16,19 +16,18 @@ public class DoorLogic : MonoBehaviour
 
     private GameObject unlockUIToBeDestroyed;
 
-    //arCamera
     //3DLockpickingInterfaceToSpawn (prefab)
     [SerializeField]
     private GameObject lockpickingInterfaceToSpawn3D;
+
+    private int randomizedInt;
+    private bool locked = false;
 
     private Camera arCamera;
 
     [SerializeField] AudioClip[] unlockSounds;
     [SerializeField] AudioSource audioSource;
 
-    private GameObject arSessionOrigin;
-    private bool lockpickingProcessOngoing = false;
-    private IngameSceneManagement ingameSceneManagement;
 
     // Start is called before the first frame update
     void Start()
@@ -37,20 +36,12 @@ public class DoorLogic : MonoBehaviour
         door = transform.GetChild(0).gameObject;
         arCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
-        arSessionOrigin = GameObject.FindGameObjectWithTag("ARSessionOrigin");
-        ingameSceneManagement = GameObject.FindGameObjectWithTag("IngameSceneManager").GetComponent<IngameSceneManagement>();
+        DesignateLockStatus();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //If the lockpicking mini-game is currently going on, reduce the size of all AR content by 4x to make the 3D lock model fit
-        //if (lockpickingProcessOngoing == true)
-        //{
-        //    arSessionOrigin.transform.localScale = new Vector3(8.0f, 8.0f, 8.0f);
-        //}
-
-
         //Unlock door on button press
         /*
          * custom button code
@@ -61,7 +52,7 @@ public class DoorLogic : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && locked == true)
         {
             SpawnUnlockUI();
         }
@@ -129,21 +120,28 @@ public class DoorLogic : MonoBehaviour
         //Assigning this door a tag ("DoorToBeUnlocked"), so that the instantiated 3D lockpicking interface can reference this respective door
         this.gameObject.tag = "DoorToBeUnlocked";
 
-        //Telling the game that now the lockpicking mini-game has started
-        //lockpickingProcessOngoing = true;
-
-        //placeholder code for intializing the lockpicking mini-game
-        //ingameSceneManagement.LoadLockpickingScene();
-
-
-
-
-        //this is the placeholder code for unlocking the door without the lockpicking mini-game
-        
-
         //Once the lockpicking mini-game has been completed, the door this script is on has the be opened using the UnlockDoor() function!
         UnlockDoor();
         //Play the unlocking audio!
         audioSource.PlayOneShot(unlockSounds[Random.Range(0, unlockSounds.Length)]);
+    }
+
+    private void DesignateLockStatus()
+    {
+        randomizedInt = Random.Range(0, 101);
+
+        //Deciding if the door is locked or not (20% chance it is locked)
+        if (randomizedInt < 21)
+        {
+            //Door is locked
+            locked = true;
+        }
+        else if (randomizedInt > 20)
+        {
+            //Door is not locked
+            locked = false;
+            //Unlock the door
+            UnlockDoor();
+        }
     }
 }
