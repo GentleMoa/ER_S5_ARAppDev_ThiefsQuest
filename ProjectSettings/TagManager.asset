@@ -38,6 +38,8 @@ TagManager:
   - Lockpick_SubColl
   - ToMenuButton
   - Lock_RaycastTarget
+  - Lock_Bolt
+  - DoorToBeUnlocked
   layers:
   - Default
   - TransparentFX
