@@ -22,11 +22,21 @@ public class LockSchematicInitializer : MonoBehaviour
     [SerializeField] private GameObject expanderButton;
     //Lerp Variables
     float lerpDuration = 1.0f;
+    //Audio
+    [SerializeField] AudioClip openSchematicScribbleSound;
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void ExpandSchematic()
     {
         //Start Coroutine
         StartCoroutine(LerpLayersToExPos());
+        //Play paper scribble audio
+        audioSource.PlayOneShot(openSchematicScribbleSound);
         //Destroying the Expander Button so the Schematic can be interacted with
         Destroy(expanderButton);
     }
