@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class LockSchematicXRay : MonoBehaviour
 {
     #region Variables
+
     //Opque/Transparent Lock mats
     [SerializeField] private Material matOpaque;
     [SerializeField] private Material matTransparent;
@@ -95,13 +96,25 @@ public class LockSchematicXRay : MonoBehaviour
     [SerializeField] private Image layer_5_img;
     private Color spriteColorOpaque;
     [SerializeField] private Color spriteColorTransparent;
+    //Audio
+    [SerializeField] AudioClip[] lockSchematicPaperSounds;
+    private AudioSource audioSource;
+
+    #endregion
+
+    #region Reference Audio Source in Start
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     #endregion
 
     #region Layer_1XRay
     public void Layer_1XRay()
     {
-        if(layer_1Transparent == false)
+        if (layer_1Transparent == false)
         {
             //l1_obj_1
             //grab the objs renderer
@@ -127,6 +140,9 @@ public class LockSchematicXRay : MonoBehaviour
 
             //set the flag
             layer_1Transparent = true;
+
+            //play audio
+            audioSource.PlayOneShot(lockSchematicPaperSounds[0]);
         }
         else if (layer_1Transparent == true)
         {
@@ -149,6 +165,9 @@ public class LockSchematicXRay : MonoBehaviour
 
             //set the flag
             layer_1Transparent = false;
+
+            //play audio
+            audioSource.PlayOneShot(lockSchematicPaperSounds[1]);
         }
     }
     #endregion
@@ -236,6 +255,9 @@ public class LockSchematicXRay : MonoBehaviour
 
             //set the flag
             layer_2Transparent = true;
+
+            //play audio
+            audioSource.PlayOneShot(lockSchematicPaperSounds[0]);
         }
         else if (layer_2Transparent == true)
         {
@@ -300,6 +322,9 @@ public class LockSchematicXRay : MonoBehaviour
 
             //set the flag
             layer_2Transparent = false;
+
+            //play audio
+            audioSource.PlayOneShot(lockSchematicPaperSounds[1]);
         }
     }
     #endregion
@@ -324,6 +349,9 @@ public class LockSchematicXRay : MonoBehaviour
 
             //set the flag
             layer_3Transparent = true;
+
+            //play audio
+            audioSource.PlayOneShot(lockSchematicPaperSounds[0]);
         }
         else if (layer_3Transparent == true)
         {
@@ -339,6 +367,9 @@ public class LockSchematicXRay : MonoBehaviour
 
             //set the flag
             layer_3Transparent = false;
+
+            //play audio
+            audioSource.PlayOneShot(lockSchematicPaperSounds[1]);
         }
     }
     #endregion
@@ -363,6 +394,9 @@ public class LockSchematicXRay : MonoBehaviour
 
             //set the flag
             layer_4Transparent = true;
+
+            //play audio
+            audioSource.PlayOneShot(lockSchematicPaperSounds[0]);
         }
         else if (layer_4Transparent == true)
         {
@@ -378,6 +412,9 @@ public class LockSchematicXRay : MonoBehaviour
 
             //set the flag
             layer_4Transparent = false;
+
+            //play audio
+            audioSource.PlayOneShot(lockSchematicPaperSounds[1]);
         }
     }
     #endregion
@@ -411,6 +448,9 @@ public class LockSchematicXRay : MonoBehaviour
 
             //set the flag
             layer_5Transparent = true;
+
+            //play audio
+            audioSource.PlayOneShot(lockSchematicPaperSounds[0]);
         }
         else if (layer_5Transparent == true)
         {
@@ -433,6 +473,9 @@ public class LockSchematicXRay : MonoBehaviour
 
             //set the flag
             layer_5Transparent = false;
+
+            //play audio
+            audioSource.PlayOneShot(lockSchematicPaperSounds[1]);
         }
     }
     #endregion

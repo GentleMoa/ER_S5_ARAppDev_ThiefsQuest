@@ -6,6 +6,8 @@ using TMPro;
 
 public class LockpickingLogic : MonoBehaviour
 {
+    #region Variables
+
     //Camera
     private Camera arCamera;
     //Lockpicking objects
@@ -65,10 +67,12 @@ public class LockpickingLogic : MonoBehaviour
     private GameObject uiSneakButton;
     private GameObject uiTotalLoot;
     private GameObject uiMenuButton;
-    //Gyroscope Handling
-    private Gyroscope gyro;
-    private Quaternion gyroRotation;
-    private bool gyroActive = false;
+    private GameObject uiHelpButton;
+    //Audio
+    [SerializeField] AudioClip[] lockpickGrabSounds;
+    private AudioSource audioSource;
+
+    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -77,9 +81,13 @@ public class LockpickingLogic : MonoBehaviour
         arCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         uiDebugger = GameObject.FindGameObjectWithTag("UIDebugger");
         lockpickLayer = LayerMask.GetMask("Lockpick_Plane");
+        audioSource = GetComponent<AudioSource>();
 
         //disabling the Lockpick Raycast Plane childed to the camera
         arCamera.transform.GetChild(0).gameObject.SetActive(false);
+
+        //Calling a function that adapts the UI to show respective elements and hide others
+        ShowLockpickUI();
     }
 
     // Update is called once per frame
@@ -330,8 +338,8 @@ public class LockpickingLogic : MonoBehaviour
             //move into action position
             lockpick_1.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.1f, this.transform.position.z - 0.1f);
             lockpick_1.transform.Rotate(-75.0f, 90.0f, -75.0f);
-            //saving the action pose rotation
-            //lockpick_1_actionRot = lockpick_1.transform.rotation;
+            //playing the lockpick grab audio
+            audioSource.PlayOneShot(lockpickGrabSounds[Random.Range(0, lockpickGrabSounds.Length)]);
             //set actionFlag
             lockpick_1_actionFlag = true;
         }
@@ -341,8 +349,8 @@ public class LockpickingLogic : MonoBehaviour
             //move into action position
             lockpick_2.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.1f, this.transform.position.z - 0.1f);
             lockpick_2.transform.Rotate(-75.0f, 90.0f, -75.0f);
-            //saving the action pose rotation
-            //lockpick_2_actionRot = lockpick_2.transform.rotation;
+            //playing the lockpick grab audio
+            audioSource.PlayOneShot(lockpickGrabSounds[Random.Range(0, lockpickGrabSounds.Length)]);
             //set actionFlag
             lockpick_2_actionFlag = true;
         }
@@ -352,8 +360,8 @@ public class LockpickingLogic : MonoBehaviour
             //move into action position
             lockpick_3.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.1f, this.transform.position.z - 0.1f);
             lockpick_3.transform.Rotate(-75.0f, 90.0f, -75.0f);
-            //saving the action pose rotation
-            //lockpick_3_actionRot = lockpick_3.transform.rotation;
+            //playing the lockpick grab audio
+            audioSource.PlayOneShot(lockpickGrabSounds[Random.Range(0, lockpickGrabSounds.Length)]);
             //set actionFlag
             lockpick_3_actionFlag = true;
         }
@@ -363,8 +371,8 @@ public class LockpickingLogic : MonoBehaviour
             //move into action position
             lockpick_4.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + 0.1f, this.transform.position.z - 0.1f);
             lockpick_4.transform.Rotate(-75.0f, 90.0f, -75.0f);
-            //saving the action pose rotation
-            //lockpick_4_actionRot = lockpick_4.transform.rotation;
+            //playing the lockpick grab audio
+            audioSource.PlayOneShot(lockpickGrabSounds[Random.Range(0, lockpickGrabSounds.Length)]);
             //set actionFlag
             lockpick_4_actionFlag = true;
         }
@@ -626,7 +634,24 @@ public class LockpickingLogic : MonoBehaviour
 
     public void DestroyLock()
     {
+        //Disabling the help button UI
+        uiHelpButton.GetComponent<Image>().enabled = false;
+        //Destroy the entire 3D lockpicking interface
         Destroy(this.gameObject);
+    }
+
+    #endregion
+
+    //Show Lockpick UI
+
+    #region ShowLockpickUI
+
+    private void ShowLockpickUI()
+    {
+        //Reference the UI Lockpicking Help Button
+        uiHelpButton = GameObject.FindGameObjectWithTag("LockpickingHelpButton");
+        //Enabling it's image component to make it visible
+        uiHelpButton.GetComponent<Image>().enabled = true;
     }
 
     #endregion

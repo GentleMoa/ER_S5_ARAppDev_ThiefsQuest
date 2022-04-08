@@ -115,5 +115,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Position: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _position: {r: 0.45325083, g: -1.6507721, b: 0.32809317, a: 0}
+    - _position: {r: 0.8737924, g: 0.34996602, b: 1.3379313, a: 0}
   m_BuildTextureStacks: []

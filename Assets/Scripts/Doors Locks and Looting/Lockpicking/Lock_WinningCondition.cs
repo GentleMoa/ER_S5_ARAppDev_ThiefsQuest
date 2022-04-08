@@ -16,11 +16,17 @@ public class Lock_WinningCondition : MonoBehaviour
     public float distBoltToReference;
     private GameObject uiDebugger;
     private GameObject doorToBeUnlocked;
+    [SerializeField] AudioClip[] unlockSounds;
+    [SerializeField] AudioClip[] doorCreaks;
+    private AudioSource audioSource;
 
     private void Start()
     {
         //Referencing the respective Door you are lockpicking right now
         doorToBeUnlocked = GameObject.FindGameObjectWithTag("DoorToBeUnlocked");
+
+        //Referencing the audioSource
+        audioSource = GetComponent<AudioSource>();
 
         /*
         //UI Debugging
@@ -54,6 +60,11 @@ public class Lock_WinningCondition : MonoBehaviour
     {
         //Call constraintsControl function
         ControlConstraints();
+
+        //Play Door unlocking Audio
+        audioSource.PlayOneShot(unlockSounds[Random.Range(0, unlockSounds.Length)]);
+        //Play Door Creak Audio
+        audioSource.PlayOneShot(doorCreaks[Random.Range(0, doorCreaks.Length)]);
 
         //Calling the Rotate Door Coroutine
         StartCoroutine(RotateDoor());
