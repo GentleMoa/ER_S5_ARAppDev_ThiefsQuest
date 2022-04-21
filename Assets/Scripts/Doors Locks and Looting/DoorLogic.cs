@@ -52,6 +52,10 @@ public class DoorLogic : MonoBehaviour
         {
             SpawnUnlockUI();
         }
+        else if (other.gameObject.tag == "GuardNPC" && locked == true)
+        {
+            UnlockDoor();
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -67,6 +71,10 @@ public class DoorLogic : MonoBehaviour
                 //resetting the flag to false
                 uiSpawned = false;
             }
+        }
+        else if (other.gameObject.tag == "GuardNPC" && locked == true)
+        {
+            LockDoor();
         }
     }
 
@@ -84,6 +92,14 @@ public class DoorLogic : MonoBehaviour
 
         //Destroy the Unlock UI
         //Destroy(transform.GetChild(1).gameObject);
+    }
+
+    private void LockDoor()
+    {
+        JointLimits hjLimits = door.GetComponent<HingeJoint>().limits;
+        hjLimits.min = 5;
+        hjLimits.max = 5;
+        door.GetComponent<HingeJoint>().limits = hjLimits;
     }
 
     private void SpawnUnlockUI()
