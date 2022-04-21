@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 5412324758589446374}
   m_Layer: 0
   m_Name: chest_2.003
-  m_TagString: Untagged
+  m_TagString: InvalidSpawnPlacementTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -689,7 +689,7 @@ GameObject:
   - component: {fileID: 7696481445948760681}
   m_Layer: 0
   m_Name: table_7.003
-  m_TagString: Untagged
+  m_TagString: InvalidSpawnPlacementTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1087,7 +1087,7 @@ GameObject:
   - component: {fileID: 5843883102729469380}
   m_Layer: 0
   m_Name: cupboard_3.003
-  m_TagString: Untagged
+  m_TagString: InvalidSpawnPlacementTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2501,7 +2501,7 @@ GameObject:
   - component: {fileID: 5886764134965585920}
   m_Layer: 0
   m_Name: bench_1.003
-  m_TagString: Untagged
+  m_TagString: InvalidSpawnPlacementTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2967,7 +2967,7 @@ GameObject:
   - component: {fileID: 8391704462200587376}
   m_Layer: 0
   m_Name: bed_5.003
-  m_TagString: Untagged
+  m_TagString: InvalidSpawnPlacementTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -41,6 +41,8 @@ TagManager:
   - Lock_Bolt
   - DoorToBeUnlocked
   - LockpickingHelpButton
+  - InvalidSpawnPlacementTag
+  - GuardNPC
   layers:
   - Default
   - TransparentFX
@@ -50,7 +52,7 @@ TagManager:
   - UI
   - Wall
   - Lockpick_Plane
-  - 
+  - GuardAI_UnfitTarget
   - 
   - 
   - 

@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 2235303528383326860}
   m_Layer: 0
   m_Name: cabinet_1.001
-  m_TagString: Untagged
+  m_TagString: InvalidSpawnPlacementTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -629,7 +629,7 @@ GameObject:
   - component: {fileID: 2824514411105799620}
   m_Layer: 0
   m_Name: table_5.001
-  m_TagString: Untagged
+  m_TagString: InvalidSpawnPlacementTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 1184044299542216204}
   m_Layer: 0
   m_Name: bench_2.001
-  m_TagString: Untagged
+  m_TagString: InvalidSpawnPlacementTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1196,7 +1196,7 @@ GameObject:
   - component: {fileID: 2480760966470852331}
   m_Layer: 0
   m_Name: stool_2.001
-  m_TagString: Untagged
+  m_TagString: InvalidSpawnPlacementTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
