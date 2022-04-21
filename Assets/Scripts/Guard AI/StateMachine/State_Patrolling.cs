@@ -24,8 +24,6 @@ public class State_Patrolling : State
             //reset "State_Idle" flags
             stateIdle.isPatrolling = false;
 
-            Debug.Log("Should change states?");
-
             //change state
             return stateIdle;
         }
