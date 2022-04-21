@@ -54,7 +54,7 @@ public class DoorLogic : MonoBehaviour
         }
         else if (other.gameObject.tag == "GuardNPC" && locked == true)
         {
-            UnlockDoor();
+            UnlockDoorByNPC();
         }
     }
 
@@ -80,6 +80,24 @@ public class DoorLogic : MonoBehaviour
 
 
     public void UnlockDoor()
+    {
+        //DEBUGGING
+        //Debug.Log("UNLOCK BUTTON CLICK!");
+
+        //Changing the doors hinge joint parameters to allow it to be opened
+        JointLimits hjLimits = door.GetComponent<HingeJoint>().limits;
+        hjLimits.min = -90;
+        hjLimits.max = 90;
+        door.GetComponent<HingeJoint>().limits = hjLimits;
+
+        //change flag
+        locked = false;
+
+        //Destroy the Unlock UI
+        //Destroy(transform.GetChild(1).gameObject);
+    }
+
+    public void UnlockDoorByNPC()
     {
         //DEBUGGING
         //Debug.Log("UNLOCK BUTTON CLICK!");
