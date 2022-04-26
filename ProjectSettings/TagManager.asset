@@ -43,6 +43,8 @@ TagManager:
   - LockpickingHelpButton
   - InvalidSpawnPlacementTag
   - GuardNPC
+  - Player_HeadBone
+  - Player_ChestBone
   layers:
   - Default
   - TransparentFX
@@ -53,7 +55,7 @@ TagManager:
   - Wall
   - Lockpick_Plane
   - HiddenObjects
-  - 
+  - Player
   - 
   - 
   - 
